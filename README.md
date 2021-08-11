@@ -25,11 +25,19 @@ Install mysql database, then download the [freepos installer](https://github.com
 
 ### Some Sreenshots
 
-![login](screenshots/1.png)
-![dashboard](screenshots/2.png)
-![sales](screenshots/3.png)
-![product](screenshots/4.png)
-![user](screenshots/5.png)
+![login](screenshots/1-login.png)
+![dashboard](screenshots/2-dashboard.png)
+![sale window](screenshots/3-sale.png)
+![ledered sales](screenshots/3-salelegered.png)
+![ledered sales](screenshots/3-salelist.png)
+![product add](screenshots/4-productadd.png)
+![product list](screenshots/4-productlist.png)
+![product report](screenshots/4-productreport.png)
+![user add](screenshots/5-personadd.png)
+![user list](screenshots/5-personlist.png)
+![transactions](screenshots/6-transactions.png)
+![user list](screenshots/7-setting.png)
+![user list](screenshots/7-settingdatabase.png)
 
 ### Requirements
 * .Net framework >= 4.5
