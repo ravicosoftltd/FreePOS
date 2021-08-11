@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB91D8FE-0DA5-4F07-A7F2-3C96E192D704}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FreePOS</RootNamespace>
+    <AssemblyName>FreePOS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>https://ravicosoft.com</SupportUrl>
+    <ProductName>BusinessBook</ProductName>
+    <SuiteName>Business Management</SuiteName>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>21.08.11.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5A3CACA43197CEAA3A115BE682492E5848F4FA5A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Business Book_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Documents.SpreadsheetStreaming, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Pivot.Core, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Cloud, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Chart, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.ConversationalUI, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Docking, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WPF R1 2020\Binaries\WPF45\Telerik.Windows.Controls.Docking.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.RichTextBoxUI, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Data, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents, Version=2020.1.218.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Zip.Extensions, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="bll\BooleanToVisibilityConverter.cs" />
+    <Compile Include="bll\financeutils.cs" />
+    <Compile Include="bll\AppSetting.cs" />
+    <Compile Include="bll\networkutils.cs" />
+    <Compile Include="bll\otherutils.cs" />
+    <Compile Include="bll\printing.cs" />
+    <Compile Include="bll\productutils.cs" />
+    <Compile Include="bll\purchaseutils.cs" />
+    <Compile Include="bll\inventoryutils.cs" />
+    <Compile Include="bll\reportingutils.cs" />
+    <Compile Include="bll\saleutils.cs" />
+    <Compile Include="bll\TimeUtils.cs" />
+    <Compile Include="bll\userutils.cs" />
+    <Compile Include="bll\databaseutils.cs" />
+    <Compile Include="data\dapper\inventorylog.cs" />
+    <Compile Include="data\dapper\financetransaction.cs" />
+    <Compile Include="data\dapper\financeaccount.cs" />
+    <Compile Include="data\dapper\cashclosing.cs" />
+    <Compile Include="data\dapper\softwaresetting.cs" />
+    <Compile Include="data\dapper\productsalepurchase.cs" />
+    <Compile Include="data\dapper\productsub.cs" />
+    <Compile Include="data\dapper\product.cs" />
+    <Compile Include="data\dapper\user.cs" />
+    <Compile Include="data\viewmodel\apiresponsetype.cs" />
+    <Compile Include="data\viewmodel\apiresponseuserclass.cs" />
+    <Compile Include="data\viewmodel\commonsettingfields.cs" />
+    <Compile Include="data\viewmodel\productsaleorpurchaseviewmodel.cs" />
+    <Compile Include="other\Class1.cs" />
+    <Compile Include="Views\finance\accountsbalance.xaml.cs">
+      <DependentUpon>accountsbalance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\finance\cashclosingadd.xaml.cs">
+      <DependentUpon>cashclosingadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\finance\expences.xaml.cs">
+      <DependentUpon>expences.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\finance\ledger.xaml.cs">
+      <DependentUpon>ledger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\finance\salenew.xaml.cs">
+      <DependentUpon>salenew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\finance\purchasenew.xaml.cs">
+      <DependentUpon>purchasenew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\finance\salepurchasedetails.xaml.cs">
+      <DependentUpon>salepurchasedetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\finance\accounts.xaml.cs">
+      <DependentUpon>accounts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\finance\salespurchases.xaml.cs">
+      <DependentUpon>salespurchases.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\finance\cashclosing.xaml.cs">
+      <DependentUpon>cashclosing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\finance\transactions.xaml.cs">
+      <DependentUpon>transactions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\others\DatabaseSettingWindow.xaml.cs">
+      <DependentUpon>DatabaseSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\others\DialogSelectUser.xaml.cs">
+      <DependentUpon>DialogSelectUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\others\ProductsTextBoxAutoComplete.xaml.cs">
+      <DependentUpon>ProductsTextBoxAutoComplete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\others\ravicosoftaccount.xaml.cs">
+      <DependentUpon>ravicosoftaccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\others\sms.xaml.cs">
+      <DependentUpon>sms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\others\SQLQueryBuilder.xaml.cs">
+      <DependentUpon>SQLQueryBuilder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\others\Window_Setting.xaml.cs">
+      <DependentUpon>Window_Setting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\finance\pos.xaml.cs">
+      <DependentUpon>pos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\product\inventoryrlog.xaml.cs">
+      <DependentUpon>inventoryrlog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\product\InventoryValueReport.xaml.cs">
+      <DependentUpon>InventoryValueReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\report\reportviewer.xaml.cs">
+      <DependentUpon>reportviewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\user\Add.xaml.cs">
+      <DependentUpon>Add.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\user\List.xaml.cs">
+      <DependentUpon>List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\product\ProductAdd.xaml.cs">
+      <DependentUpon>ProductAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\product\ProductList.xaml.cs">
+      <DependentUpon>ProductList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard.xaml.cs">
+      <DependentUpon>Dashboard.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\finance\accountsbalance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\finance\cashclosingadd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\finance\expences.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\finance\ledger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\finance\salenew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\finance\purchasenew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\finance\salepurchasedetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\finance\accounts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\finance\salespurchases.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\finance\cashclosing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\finance\transactions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\others\DatabaseSettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\others\DialogSelectUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\others\ProductsTextBoxAutoComplete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\others\ravicosoftaccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\others\sms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\others\SQLQueryBuilder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\others\Window_Setting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\finance\pos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\product\inventoryrlog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\product\InventoryValueReport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\report\reportviewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\user\Add.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\user\List.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\product\ProductAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\product\ProductList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Business Book_TemporaryKey.pfx" />
+    <None Include="data\databaseconnection.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\reporttemplates\invoice.rdl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="other\old software\Release.zip" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="favicon.ico" />
+    <None Include="data\freepos.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Resource Include="assets\pattern1.png" />
+    <Resource Include="assets\pattern2.png" />
+    <Content Include="data\freepos-sqlserver.sql" />
+    <Content Include="other\backups\bbdb_usman_pos_products-10-7-2021.sql" />
+    <Content Include="other\backups\quickpos_usman_pos_backup-10-07-2021.sql" />
+    <Content Include="other\old software\Old Demo Data.sql" />
+    <Content Include="other\old software\Old.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Dapper">
+      <Version>2.0.78</Version>
+    </PackageReference>
+    <PackageReference Include="Dapper.Contrib">
+      <Version>2.0.78</Version>
+    </PackageReference>
+    <PackageReference Include="Extended.Wpf.Toolkit">
+      <Version>4.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="MaterialDesignColors">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="MaterialDesignThemes">
+      <Version>4.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Office.Interop.Excel">
+      <Version>15.0.4795.1000</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms">
+      <Version>150.1440.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit">
+      <Version>7.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts">
+      <Version>10.0.19041.1</Version>
+    </PackageReference>
+    <PackageReference Include="MySql.Data">
+      <Version>8.0.23</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="RestSharp">
+      <Version>106.11.8-alpha.0.12</Version>
+    </PackageReference>
+    <PackageReference Include="System.Buffers">
+      <Version>4.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SqlClient">
+      <Version>4.8.2</Version>
+    </PackageReference>
+    <PackageReference Include="System.Memory">
+      <Version>4.5.4</Version>
+    </PackageReference>
+    <PackageReference Include="System.Numerics.Vectors">
+      <Version>4.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.WindowsRuntime">
+      <Version>5.0.0-preview.5.20278.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.WindowsRuntime.UI.Xaml">
+      <Version>5.0.0-preview.5.20278.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.5.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

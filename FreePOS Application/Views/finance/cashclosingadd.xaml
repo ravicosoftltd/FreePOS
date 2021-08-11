@@ -1,0 +1,25 @@
+﻿<Window x:Class="FreePOS.Views.finance.cashclosingadd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FreePOS.Views.finance" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        Width="400"
+        Height="400"
+        Title="Cash Closing">
+    <Grid>
+        <Label x:Name="lastclosing_lbl" Content="Last Closing: 0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,20,0,0" FontSize="18px"/>
+        <Label Content="Sale" HorizontalAlignment="Left" Margin="20,100,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="sale_tb" TabIndex="1" Text="" HorizontalAlignment="Right" Height="25" Margin="0,100,20,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+        <Label Content="Expence" HorizontalAlignment="Left" Margin="20,140,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="expence_tb" TabIndex="1" Text="" HorizontalAlignment="Right" Height="25" Margin="0,140,20,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+        <Label Content="Closing Balance" HorizontalAlignment="Left" Margin="20,180,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="closingbalance_tb" TabIndex="1" Text="" HorizontalAlignment="Right" Height="25" Margin="0,180,20,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+        <Label Content="Message" HorizontalAlignment="Left" Margin="20,220,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="note_tb" TabIndex="1" Text="" HorizontalAlignment="Right" Height="25" Margin="0,220,20,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+
+        <Button Content="Save" Click="save" HorizontalAlignment="Center" Margin="0,0,0,20" VerticalAlignment="Bottom" Width="116" Height="34"/>
+    </Grid>
+</Window>

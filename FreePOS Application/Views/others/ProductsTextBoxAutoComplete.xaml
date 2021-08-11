@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="FreePOS.Views.others.ProductsTextBoxAutoComplete"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FreePOS.Views.others"
+             mc:Ignorable="d" 
+              >
+    <Grid>
+        <StackPanel Orientation="Vertical"    
+                    VerticalAlignment="top"    
+                    HorizontalAlignment="left">
+
+            <TextBox x:Name="autoTextBox"
+                     GotFocus="autoTextBox_Focus"
+                             Width="140"     
+                             Height="22"    
+                             FontSize="11"        
+                             BorderThickness="1"     
+                             Padding="5,2,0,0"    
+                             Background="#FFECECEC"   
+                             TextChanged="AutoTextBox_TextChanged"/>
+
+            <Popup x:Name="autoListPopup"    
+                   Visibility="Collapsed"                    
+                   StaysOpen="False"    
+                   Placement="Bottom">
+
+                <ListBox x:Name="productsListBox"
+                         DisplayMemberPath = "name"
+                         Background="#FFF0F0F0"
+                         Visibility="Collapsed"    
+                         Width="200"       
+                         Height="160"    
+                         SelectionChanged="AutoList_SelectionChanged" />
+            </Popup>
+        </StackPanel>
+    </Grid>
+</UserControl>

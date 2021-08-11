@@ -1,0 +1,24 @@
+﻿<Window x:Class="FreePOS.Views.finance.salepurchasedetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FreePOS.Views.finance"
+        mc:Ignorable="d"
+        Title="Details" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button Name="print_btn" IsEnabled="False" Click="printPeceipt" Margin="10,10,10,10" VerticalAlignment="Top">Print</Button>
+        <DataGrid Name="dg" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Product Name" Binding="{Binding productname}" />
+                <DataGridTextColumn Header="Price" Binding="{Binding price}" />
+                <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" />
+                <DataGridTextColumn Header="Total" Binding="{Binding total}" />
+                <DataGridTextColumn Header="Product Id" Binding="{Binding fk_product_in_productsalepurchase}" />
+                <DataGridTextColumn Header="Transaction Id" Binding="{Binding fk_financetransaction_in_productsalepurchase}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

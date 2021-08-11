@@ -1,0 +1,87 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    x:Class="FreePOS.Views.Dashboard"
+        Title="FreePOS" Height="Auto" Width="Auto" WindowState="Maximized">
+    <Grid>
+        <Menu Background="#FF575757" Foreground="#DDC7C7C7" VerticalAlignment="Top"   Margin="0,0,0,0">
+            <MenuItem  Header="Customer">
+                <MenuItem Header="Add Customer" Click="mi_AddNewCustomer"/>
+                <MenuItem Header="View Customers" Click="mi_ViewAllCustomers"/>
+            </MenuItem>
+            <MenuItem  Header="Vendor">
+                <MenuItem Header="Add Vendor" Click="mi_AddNewVendor"/>
+                <MenuItem Header="View Vendors" Click="mi_ViewAllVendors"/>
+            </MenuItem>
+            <MenuItem Header="Staff">
+                <MenuItem Header="Add Admin" Click="mi_AddAdmin"/>
+                <MenuItem Header="View Admins" Click="mi_AllAdmin"/>
+                <MenuItem Header="Add User" Click="mi_AddUser"/>
+                <MenuItem Header="View Users" Click="mi_AllUser"/>
+            </MenuItem>
+            <MenuItem Header="Products">
+                <MenuItem Header="Add Product" Click="productadd"/>
+                <MenuItem Header="All Products" Click="products"/>
+                <MenuItem Header="Inventory Value Report" Click="product_inventoryValueReport"/>
+            </MenuItem>
+
+            <MenuItem Header="Finances">
+                <MenuItem Header="Accounts" Click="accountsshow"/>
+                <MenuItem Header="Accounts Balance" Click="accountsbalanceshow"/>
+                <MenuItem Header="POS" Click="pos"/>
+                <MenuItem Header="New Sale" Click="salenewshow"/>
+                <MenuItem Header="View Sales" Click="salesshow"/>
+                <MenuItem Header="New Purchase" Click="purchasenewshow"/>
+                <MenuItem Header="Purchases" Click="purchasesshow"/>
+                <MenuItem Header="Expences" Click="expencesshow"/>
+                <MenuItem Header="Transactions" Click="transactionsshow"/>
+                <MenuItem Header="Cash closing" Click="cashclosingadd"/>
+                <MenuItem Header="Cash closing report" Click="cashclosing"/>
+            </MenuItem>
+            <MenuItem Header="Others">
+                <MenuItem Header="Setting" Click="mi_Setting"/>
+                <MenuItem Header="Ravicosoft Account" Click="mi_ravicosoftaccount"/>
+                <MenuItem Header="SMS" Click="mi_sms"/>
+                <MenuItem Header="Databse Setting" Click="mi_databasesetting"/>
+                <MenuItem Header="SQL Query Builder" Click="mi_sqlquerybuilder"/>
+            </MenuItem>
+            <MenuItem Header="Log Out" Click="mi_LogOut"/>
+        </Menu>
+        <Grid Background="#f0f0f0" Margin="0,48,0,25">
+            <WebBrowser Name="webview" VerticalAlignment="Top" Height="210"
+                             OverridesDefaultStyle="False"
+                            ScrollViewer.CanContentScroll="False"
+                            ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                            ScrollViewer.VerticalScrollBarVisibility="Hidden"></WebBrowser>
+            <!--<Grid VerticalAlignment="Center" HorizontalAlignment="Center" >
+
+
+                <telerik:RadCartesianChart HorizontalAlignment="Right"  Width="500" Height="500">
+                    <telerik:RadCartesianChart.HorizontalAxis>
+                        <telerik:CategoricalAxis/>
+                    </telerik:RadCartesianChart.HorizontalAxis>
+                    <telerik:RadCartesianChart.VerticalAxis>
+                        <telerik:LinearAxis />
+                    </telerik:RadCartesianChart.VerticalAxis>
+                    <telerik:RadCartesianChart.Series >
+                        <telerik:SplineAreaSeries Name="chartseries"  ItemsSource="{Binding}" CategoryBinding="Day" ValueBinding="Total" StrokeThickness="3" Fill="#9962B94F" Stroke="#B259C741">
+                            <telerik:SplineAreaSeries.DataPoints>
+                                
+                            </telerik:SplineAreaSeries.DataPoints>
+                        </telerik:SplineAreaSeries>
+                    </telerik:RadCartesianChart.Series>
+                </telerik:RadCartesianChart>
+
+            </Grid>-->
+
+
+            <Image Source="/FreePOS;component/assets/pattern1.png" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="250" Height="Auto"  Opacity="0.7"></Image>
+            <Label Content="FreePOS"  VerticalAlignment="Bottom" HorizontalContentAlignment="Left" FontSize="80" Foreground="#DDC7C7C7" >
+               
+            </Label>
+        </Grid>
+        <Label Content=" Software Licenced By Ravicosoft. +92 302 4759550" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" Margin="0,0,0,0" FontSize="12" Background="#FF4D4D4D" Height="25" Foreground="#DDC7C7C7" Grid.ColumnSpan="2"/>
+    </Grid>
+
+</Window>

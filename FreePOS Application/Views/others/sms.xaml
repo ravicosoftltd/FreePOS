@@ -1,0 +1,48 @@
+﻿<Window x:Class="FreePOS.Views.others.sms"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FreePOS.Views.others" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d"
+        Title="Branded Or Corporate SMS" Height="Auto" Width="Auto">
+    <Grid>
+        <Grid Margin="0,0,0,120">
+            <telerik:RadTabControl telerik:StyleManager.Theme="Fluent">
+                <telerik:RadTabControl.Items>
+                    <telerik:RadTabItem Header="Select Constacts">
+                        <Grid>
+                            <telerik:RadGridView x:Name="dg" ShowSearchPanel="True" SelectionMode="Multiple" SelectionUnit="FullRow"
+                     AutoGenerateColumns="False" telerik:StyleManager.Theme="Fluent" >
+                                <telerik:RadGridView.Columns>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding name}" Header="Name"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding phone}" Header="Phone"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding phone2}" Header="Phone2"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding address}" Header="Address"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding role}" Header="Type"/>
+                                </telerik:RadGridView.Columns>
+                            </telerik:RadGridView>
+                        </Grid>
+                    </telerik:RadTabItem>
+
+                    <telerik:RadTabItem Header="Or Enter Manually">
+                        <Grid>
+                            <Label Margin="30,10,30,30" VerticalAlignment="Top">Enter comma or space seperated numbers</Label>
+                            <TextBox x:Name="commaseperatednumbers_tb" TextWrapping="Wrap" AcceptsReturn="True" Margin="30,40,30,30" VerticalAlignment="Top" Height="300" Background="#FFFBFBFB" BorderBrush="#89F1F1F1" >
+
+                            </TextBox>
+                        </Grid>
+                    </telerik:RadTabItem>
+
+
+                </telerik:RadTabControl.Items>
+            </telerik:RadTabControl>
+        </Grid>
+        <Grid  Margin="20,0,20,40"   VerticalAlignment="Bottom">
+            <Label Content="Type Message" HorizontalAlignment="Left"/>
+            <TextBox x:Name="text_tb" SpellCheck.IsEnabled="True" TextWrapping="Wrap" AcceptsReturn="True" Margin="100,0"  Height="60" />
+            <Button Content="Send" HorizontalAlignment="Right" Click="sendsms"/>
+        </Grid>
+    </Grid>
+
+</Window>

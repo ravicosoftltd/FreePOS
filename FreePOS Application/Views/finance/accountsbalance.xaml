@@ -1,0 +1,22 @@
+﻿<Window x:Class="FreePOS.Views.finance.accountsbalance"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FreePOS.Views.finance"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Width="auto"
+        Height="auto"
+        Title="Accounts Balances">
+    <Grid>
+        <DataGrid Name="dg" Margin="0,0,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding name}" />
+                <DataGridTextColumn Header="Total" Binding="{Binding total}" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

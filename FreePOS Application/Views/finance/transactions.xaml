@@ -1,0 +1,63 @@
+﻿<Window x:Class="FreePOS.Views.finance.transactions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FreePOS.Views.finance" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Width="auto"
+        Height="auto"
+        Title="transactions">
+    <Grid>
+        <Label Content="Amount" HorizontalAlignment="Left" Margin="11,12,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_amount" TabIndex="1" Text="" HorizontalAlignment="Left" Height="25" Margin="64,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83"/>
+        <Label Content="From acct" HorizontalAlignment="Left" Margin="160,12,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="fromaccount_combobox" HorizontalAlignment="Left" Margin="207,4,0,0" VerticalAlignment="Top" Width="145" Height="33"/>
+        <Label Content="To acct" HorizontalAlignment="Left" Margin="384,11,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="toaccount_combobox" HorizontalAlignment="Left" Margin="431,3,0,0" VerticalAlignment="Top" Width="158" Height="33"/>
+        <Button Content="Save" Click="save" HorizontalAlignment="Left" Margin="628,6,0,0" VerticalAlignment="Top" Width="116" Height="34"/>
+
+
+        <Label Content="From Date" HorizontalAlignment="Left" Margin="6,61,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="FromDate" HorizontalAlignment="Left" Margin="187,61,0,0" VerticalAlignment="Top"/>
+        <Label Content="To Date" HorizontalAlignment="Left" Margin="328,61,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="ToDate" HorizontalAlignment="Left" Margin="384,61,0,0" VerticalAlignment="Top"/>
+        <Button Click="Btn_Search_Transactions_Click" Content="Search" HorizontalAlignment="Left" Margin="554,61,0,0" VerticalAlignment="Top" Width="75"/>
+
+
+        <telerik:RadGridView
+            x:Name="dg"
+            Margin="0,120,0,0" 
+            ShowSearchPanel="True"
+            AutoGenerateColumns="False"
+            ShowColumnFooters="True"
+            telerik:StyleManager.Theme="Fluent" >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Id" DataMemberBinding="{Binding id}" Background="#FFD6D6D6">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:CountFunction Caption="Total: " />
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <!--<telerik:GridViewDataColumn Header="Id" DataMemberBinding="{Binding id}" />-->
+                <telerik:GridViewDataColumn Header="Date" DataMemberBinding="{Binding date}" />
+                <telerik:GridViewDataColumn Header="Account Id" DataMemberBinding="{Binding fk_financeaccount_in_financetransaction}" />
+                <telerik:GridViewDataColumn Header="Account Name" DataMemberBinding="{Binding accountname}" />
+                <telerik:GridViewDataColumn Header="Name" DataMemberBinding="{Binding name}" />
+                <telerik:GridViewDataColumn Header="Creator Id" DataMemberBinding="{Binding fk_user_createdby_in_financetransaction}" />
+                <telerik:GridViewDataColumn Header="Creator Name" DataMemberBinding="{Binding createdby}" />
+                <telerik:GridViewDataColumn Header="Party Id" DataMemberBinding="{Binding fk_user_targetto_in_financetransaction}" />
+                <telerik:GridViewDataColumn Header="Party Name" DataMemberBinding="{Binding target}" />
+                <telerik:GridViewDataColumn Header="Status" DataMemberBinding="{Binding status}" />
+                <telerik:GridViewDataColumn Header="Amount" DataMemberBinding="{Binding amount}" Background="#FFD6D6D6">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:SumFunction Caption="Total: " />
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <!--<telerik:GridViewDataColumn Header="Amount" DataMemberBinding="{Binding amount}" />-->
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+
+
+    </Grid>
+</Window>

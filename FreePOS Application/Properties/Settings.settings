@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FreePOS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PrinterPageWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">260</Value>
+    </Setting>
+    <Setting Name="PrinterMarginLeft" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">40</Value>
+    </Setting>
+    <Setting Name="Title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FreePOS</Value>
+    </Setting>
+    <Setting Name="SubTitle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">52, Hussain park, Harbance Pura pull, Lahore</Value>
+    </Setting>
+    <Setting Name="ReciptlineHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="lastsavedate" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2020-09-03</Value>
+    </Setting>
+    <Setting Name="Footer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Call at  (+92 302 4759550)</Value>
+    </Setting>
+    <Setting Name="BarcodeMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DatabaseServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="DatabaseName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">freepos</Value>
+    </Setting>
+    <Setting Name="DatabaseUsername" Type="System.String" Scope="User">
+      <Value Profile="(Default)">root</Value>
+    </Setting>
+    <Setting Name="DatabasePassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

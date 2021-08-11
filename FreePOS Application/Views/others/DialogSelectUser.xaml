@@ -1,0 +1,34 @@
+﻿<Window x:Class="FreePOS.Views.DialogSelectUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Customer" Height="381" Width="863">
+    <Grid>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="566,58,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_Name" TabIndex="1" Text="" HorizontalAlignment="Left" Height="25" Margin="614,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <Label Content="Phone" HorizontalAlignment="Left" Margin="563,86,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_Phone" HorizontalAlignment="Left" Height="25" Margin="614,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="190" />
+        <Label Content="Address"  HorizontalAlignment="Left" Margin="556,117,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_Address" HorizontalAlignment="Left" Height="25" Margin="614,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <Button Content="Save and Select" Click="SaveAndSelect" HorizontalAlignment="Left" Margin="566,158,0,0" VerticalAlignment="Top" Width="264" Height="34"/>
+        <TextBox x:Name="tb_Search" TextChanged="tb_Search_TextChanged" HorizontalAlignment="Left" Height="25" Margin="39,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <Label Content="Search"  HorizontalAlignment="Left" Margin="234,18,0,0" VerticalAlignment="Top"/>
+
+        <DataGrid Name="dg" AutoGenerateColumns="False" Margin="24,58,313,29">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Role" Binding="{Binding role}"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding phone}"/>
+                <DataGridTextColumn Header="Phone 2" Binding="{Binding phone2}"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding address}"/>
+                <DataGridTemplateColumn Header="Select">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="select">Select</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Cancel" Click="cancel" HorizontalAlignment="Left" Margin="566,278,0,0" VerticalAlignment="Top" Width="264" Height="34"/>
+    </Grid>
+</Window>
