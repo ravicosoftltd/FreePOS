@@ -5,7 +5,7 @@ Window based open source Point of sales built with c#, wpf and mysql
 
 ## Installation
 
-Install mysql database, then download the [freepos installer](https://github.com/ravicosoftltd/FreePOS/releases) and run
+Install mysql database, then download the [freepos installer](https://github.com/ravicosoftltd/FreePOS/releases/latest/download/FreePOS.Setup.msi) and run
 
 ### Features
 
