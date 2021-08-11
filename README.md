@@ -1,5 +1,6 @@
 # FreePOS-Point Of Sales
-Window based open source Point of sales built with c#, wpf and mysql 
+Window based open source Point of Sales software, built with c#, wpf and mysql.
+For retailers, whole salers, products seller, service sellers, groccers, restaurents, barber shops and any kind of business 
 
 
 
