@@ -131,7 +131,7 @@ namespace FreePOS
 
                     });
 
-                    new RMS().Show();
+                    new Dashboard().Show();
                     Close();
 
                     
@@ -145,7 +145,7 @@ namespace FreePOS
                 if (userd != null)
                 {
                     userutils.loggedinuserd = userd;
-                    new RMS().Show();
+                    new Dashboard().Show();
                     Close();
                 }
                 else
