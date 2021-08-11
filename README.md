@@ -44,7 +44,8 @@ Install mysql database, then download the [freepos installer](https://github.com
 * Mysql >= 5.6
 
 ## Contributing / Reporting issues
-We are looking for contributors
+We are looking for contributors to take part
+
 Create pull request or raise issues and start contributing.
 
 ## License
