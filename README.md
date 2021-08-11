@@ -40,7 +40,7 @@ Install mysql database, then download the [freepos installer](https://github.com
 ![user list](screenshots/7-settingdatabase.png)
 
 ### Requirements
-* .Net framework >= 4.5
+* .Net framework 4.8
 * Mysql >= 5.6
 
 ## Contributing / Reporting issues
