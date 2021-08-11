@@ -1,4 +1,4 @@
-﻿using BusinessBook.bll;
+﻿using FreePOS.bll;
 using MySql.Data.MySqlClient;
 using Dapper;
 using Dapper.Contrib.Extensions;
@@ -15,11 +15,11 @@ using System.Threading.Tasks;
 using Telerik.Windows.Controls;
 using System.Windows;
 
-namespace BusinessBook.data.dapper
+namespace FreePOS.data.dapper
 {
     public static class databaseutils
     {
-        public static string connectionstring = "Server=localhost;Database=bbdb;Uid=root;Pwd=brk@1234;";
+        public static string connectionstring = "Server=localhost;Database=freepos;Uid=root;Pwd=brk@1234;";
         public static string getkeyValuestoSqlAnd(dynamic keyvaluepairs) 
         {
             string s = "";
@@ -172,9 +172,9 @@ namespace BusinessBook.data.dapper
             using (var connection = new MySqlConnection(serverconnection))
             {
                 connection.Open();
-                FileInfo file = new FileInfo(@"data/bbdb.sql");
+                FileInfo file = new FileInfo(@"data/freepos.sql");
                 string script = file.OpenText().ReadToEnd();
-                string script2 = script.Replace("bbdb", AppSetting.DatabaseName);
+                string script2 = script.Replace("freepos", AppSetting.DatabaseName);
                 MySqlCommand cmd = new MySqlCommand(script2, connection);
                 var r = cmd.ExecuteNonQuery();
                 connection.Close();

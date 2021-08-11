@@ -1,4 +1,4 @@
-﻿using BusinessBook.data.dapper;
+﻿using FreePOS.data.dapper;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace BusinessBook.Views.others
+namespace FreePOS.Views.others
 {
     /// <summary>
     /// Interaction logic for SQLQueryBuilder.xaml

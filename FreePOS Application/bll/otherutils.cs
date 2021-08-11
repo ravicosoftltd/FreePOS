@@ -1,4 +1,4 @@
-﻿using BusinessBook.data.dapper;
+﻿using FreePOS.data.dapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Telerik.Windows.Controls;
 
-namespace BusinessBook.bll
+namespace FreePOS.bll
 {
     class otherutils
     {

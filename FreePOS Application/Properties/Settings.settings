@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BusinessBook.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FreePOS.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="PrinterPageWidth" Type="System.Int32" Scope="User">
@@ -9,7 +9,7 @@
       <Value Profile="(Default)">40</Value>
     </Setting>
     <Setting Name="Title" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Business Book</Value>
+      <Value Profile="(Default)">FreePOS</Value>
     </Setting>
     <Setting Name="SubTitle" Type="System.String" Scope="User">
       <Value Profile="(Default)">52, Hussain park, Harbance Pura pull, Lahore</Value>
@@ -30,7 +30,7 @@
       <Value Profile="(Default)">localhost</Value>
     </Setting>
     <Setting Name="DatabaseName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">bbdb</Value>
+      <Value Profile="(Default)">freepos</Value>
     </Setting>
     <Setting Name="DatabaseUsername" Type="System.String" Scope="User">
       <Value Profile="(Default)">root</Value>

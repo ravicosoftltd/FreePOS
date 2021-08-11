@@ -1,4 +1,4 @@
-﻿using BusinessBook.bll;
+﻿using FreePOS.bll;
 using Dapper;
 using Dapper.Contrib.Extensions;
 using MySql.Data.MySqlClient;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
 
-namespace BusinessBook.data.dapper
+namespace FreePOS.data.dapper
 {
     [System.ComponentModel.DataAnnotations.Schema.Table("financetransaction")]
 

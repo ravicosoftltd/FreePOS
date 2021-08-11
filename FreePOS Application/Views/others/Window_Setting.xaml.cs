@@ -1,4 +1,4 @@
-﻿using BusinessBook.Properties;
+﻿using FreePOS.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using BusinessBook.bll;
+using FreePOS.bll;
 
-namespace BusinessBook.Views.others
+namespace FreePOS.Views.others
 {
     /// <summary>
     /// Interaction logic for Window_Setting.xaml

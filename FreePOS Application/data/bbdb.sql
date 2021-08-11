@@ -7,8 +7,8 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-CREATE DATABASE IF NOT EXISTS `bbdb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `bbdb`;
+CREATE DATABASE IF NOT EXISTS `freepos` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `freepos`;
 
 CREATE TABLE `financeaccount` (
   `id` int(11) NOT NULL,
@@ -104,7 +104,7 @@ CREATE TABLE `softwaresetting` (
   `floatvalue` float DEFAULT NULL,
   `datevalue` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/* pre defined softwaresetting ravicosoftuserid, ravicosoftusername,ravicosoftuserpassword,ravicosoftbusinessbookmembershipplan,ravicosoftsmsplan,apiendpoint */
+/* pre defined softwaresetting ravicosoftuserid, ravicosoftusername,ravicosoftuserpassword,ravicosoftFreePOSmembershipplan,ravicosoftsmsplan,apiendpoint */
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessBook.data.dapper
+namespace FreePOS.data.dapper
 {
     [System.ComponentModel.DataAnnotations.Schema.Table("cashclosing")]
 

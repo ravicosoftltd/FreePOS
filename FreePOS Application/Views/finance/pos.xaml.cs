@@ -14,13 +14,13 @@ using System.Windows.Shapes;
 
 using System.Reflection;
 using System.Media;
-using BusinessBook.data.viewmodel;
-using BusinessBook.bll;
-using BusinessBook.data;
-using BusinessBook.data.dapper;
+using FreePOS.data.viewmodel;
+using FreePOS.bll;
+using FreePOS.data;
+using FreePOS.data.dapper;
 using System.Threading;
 
-namespace BusinessBook.Views.finance
+namespace FreePOS.Views.finance
 {
     /// <summary>
     /// Interaction logic for Window_NewSale.xaml

@@ -12,23 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BusinessBook.Views;
+using FreePOS.Views;
 using System.Globalization;
 
-using BusinessBook.bll;
-using BusinessBook.data;
-using BusinessBook.Properties;
+using FreePOS.bll;
+using FreePOS.data;
+using FreePOS.Properties;
 using Telerik.Windows.Controls;
-using BusinessBook.Views.others;
-using BusinessBook.data.dapper;
+using FreePOS.Views.others;
+using FreePOS.data.dapper;
 using System.Dynamic;
-using BusinessBook.data.viewmodel;
+using FreePOS.data.viewmodel;
 
-namespace BusinessBook
+namespace FreePOS
 {
-    public partial class MainWindow : Window
+    public partial class Login : Window
     {
-        public MainWindow()
+        public Login()
         {
             var dbserverconnection = databaseutils.initdatabase();
             if (dbserverconnection != true)
@@ -163,7 +163,7 @@ namespace BusinessBook
             if (currentdate < lastsaveddate)
             {
                 var alert = new RadDesktopAlert();
-                alert.Header = "Business Book Alert";
+                alert.Header = "FreePOS Alert";
                 alert.Content = "Please correct your system date first";
                 alert.ShowDuration = 30000;
                 System.Media.SystemSounds.Hand.Play();

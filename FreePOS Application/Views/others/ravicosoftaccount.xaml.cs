@@ -1,5 +1,5 @@
-﻿using BusinessBook.bll;
-using BusinessBook.data.dapper;
+﻿using FreePOS.bll;
+using FreePOS.data.dapper;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Windows.ApplicationModel.Search;
 
-namespace BusinessBook.Views.others
+namespace FreePOS.Views.others
 {
     /// <summary>
     /// Interaction logic for ravicosoftaccount.xaml
@@ -44,13 +44,13 @@ namespace BusinessBook.Views.others
             {
                 password_tb.Text = userutils.ravicosoftpassword.stringvalue;
             }
-            if (userutils.ravicosoftbusinessbookmembershipplan != null)
+            if (userutils.ravicosoftFreePOSmembershipplan != null)
             {
-                membershiptype_tb.Text = userutils.ravicosoftbusinessbookmembershipplan.stringvalue;
+                membershiptype_tb.Text = userutils.ravicosoftFreePOSmembershipplan.stringvalue;
             }
-            if (userutils.ravicosoftbusinessbookmembershipexpirydate != null)
+            if (userutils.ravicosoftFreePOSmembershipexpirydate != null)
             {
-                membershipexpiry_tb.Text = userutils.ravicosoftbusinessbookmembershipexpirydate.datevalue.ToString();
+                membershipexpiry_tb.Text = userutils.ravicosoftFreePOSmembershipexpirydate.datevalue.ToString();
             }
             if (userutils.ravicosoftsmsplan != null)
             {

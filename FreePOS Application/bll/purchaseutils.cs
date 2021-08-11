@@ -1,7 +1,7 @@
 ﻿
-using BusinessBook.data;
-using BusinessBook.data.dapper;
-using BusinessBook.data.viewmodel;
+using FreePOS.data;
+using FreePOS.data.dapper;
+using FreePOS.data.viewmodel;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessBook.bll
+namespace FreePOS.bll
 {
     class purchaseutils
     {

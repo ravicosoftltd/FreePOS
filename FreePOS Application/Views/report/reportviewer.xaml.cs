@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Reporting.WinForms;
 
-namespace BusinessBook.Views
+namespace FreePOS.Views
 {
     /// <summary>
     /// Interaction logic for report.xaml

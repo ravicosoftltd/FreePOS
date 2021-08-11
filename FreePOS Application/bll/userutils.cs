@@ -1,5 +1,5 @@
-﻿using BusinessBook.data.dapper;
-using BusinessBook.data.viewmodel;
+﻿using FreePOS.data.dapper;
+using FreePOS.data.viewmodel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Telerik.Windows.Controls;
 
-namespace BusinessBook.bll
+namespace FreePOS.bll
 {
     public class userutils
     {
@@ -19,9 +19,9 @@ namespace BusinessBook.bll
         public static softwaresetting ravicosoftuserid;
         public static softwaresetting ravicosoftusername;
         public static softwaresetting ravicosoftpassword;
-        public static softwaresetting ravicosoftbusinessbookmembershipplan;
-        public static softwaresetting ravicosoftbusinessbookmembershipexpirydate;
-        public static softwaresetting ravicosoftbusinessbookcanrun;
+        public static softwaresetting ravicosoftFreePOSmembershipplan;
+        public static softwaresetting ravicosoftFreePOSmembershipexpirydate;
+        public static softwaresetting ravicosoftFreePOScanrun;
         public static softwaresetting ravicosoftsmsplan;
         public static softwaresetting apiendpoint;
 
@@ -61,7 +61,7 @@ namespace BusinessBook.bll
             ravicosoftuserid = ssr.getbyname(commonsettingfields.ravicosoftuserid);
             ravicosoftusername = ssr.getbyname(commonsettingfields.ravicosoftusername);
             ravicosoftpassword = ssr.getbyname(commonsettingfields.ravicosoftpassword);
-            ravicosoftbusinessbookmembershipplan = ssr.getbyname(commonsettingfields.ravicosoftbusinessbookmembershipplan);
+            ravicosoftFreePOSmembershipplan = ssr.getbyname(commonsettingfields.ravicosoftFreePOSmembershipplan);
             ravicosoftsmsplan = ssr.getbyname(commonsettingfields.ravicosoftsmsplan);
             apiendpoint = ssr.getbyname(commonsettingfields.apiendpoint);
 
@@ -133,20 +133,20 @@ namespace BusinessBook.bll
                 userutils.ravicosoftpassword = ssr.update(userpassword);
             }
 
-            var membershiptype = ssr.getbyname(commonsettingfields.ravicosoftbusinessbookmembershipplan);
+            var membershiptype = ssr.getbyname(commonsettingfields.ravicosoftFreePOSmembershipplan);
             if (membershiptype == null)
             {
                 var ss = new softwaresetting();
-                ss.name = commonsettingfields.ravicosoftbusinessbookmembershipplan;
+                ss.name = commonsettingfields.ravicosoftFreePOSmembershipplan;
                 ss.valuetype = "string";
-                ss.stringvalue = user.businessbookmembershipplan;
-                userutils.ravicosoftbusinessbookmembershipplan = ssr.save(ss);
+                ss.stringvalue = user.FreePOSmembershipplan;
+                userutils.ravicosoftFreePOSmembershipplan = ssr.save(ss);
             }
             else
             {
                 membershiptype.valuetype = "string";
-                membershiptype.stringvalue = user.businessbookmembershipplan;
-                userutils.ravicosoftbusinessbookmembershipplan = ssr.update(membershiptype);
+                membershiptype.stringvalue = user.FreePOSmembershipplan;
+                userutils.ravicosoftFreePOSmembershipplan = ssr.update(membershiptype);
             }
             
 

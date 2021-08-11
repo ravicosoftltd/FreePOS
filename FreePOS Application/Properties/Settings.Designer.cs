@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BusinessBook.Properties {
+namespace FreePOS.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -49,7 +49,7 @@ namespace BusinessBook.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Business Book")]
+        [global::System.Configuration.DefaultSettingValueAttribute("FreePOS")]
         public string Title {
             get {
                 return ((string)(this["Title"]));
@@ -133,7 +133,7 @@ namespace BusinessBook.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("bbdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("freepos")]
         public string DatabaseName {
             get {
                 return ((string)(this["DatabaseName"]));

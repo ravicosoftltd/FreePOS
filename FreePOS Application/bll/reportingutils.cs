@@ -1,5 +1,5 @@
-﻿using BusinessBook.data.dapper;
-using BusinessBook.Views;
+﻿using FreePOS.data.dapper;
+using FreePOS.Views;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessBook.bll
+namespace FreePOS.bll
 {
     public static class reportingutils
     {

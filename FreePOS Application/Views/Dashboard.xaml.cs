@@ -1,10 +1,10 @@
 ﻿using System.Windows;
-using BusinessBook.Views.finance;
-using BusinessBook.Views.others;
+using FreePOS.Views.finance;
+using FreePOS.Views.others;
 
-using BusinessBook.Views.product;
-using BusinessBook.bll;
-using BusinessBook.data;
+using FreePOS.Views.product;
+using FreePOS.bll;
+using FreePOS.data;
 using System.Runtime.InteropServices;
 using System.Linq;
 using System.Collections.Generic;
@@ -12,20 +12,20 @@ using System;
 using Telerik.Charting;
 using Telerik.Windows.Documents.Lists;
 using System.Collections.ObjectModel;
-using BusinessBook.data.dapper;
+using FreePOS.data.dapper;
 using System.Windows.Controls;
 
-namespace BusinessBook.Views
+namespace FreePOS.Views
 {
 
     [ComVisible(true)]
-    public partial class RMS : Window
+    public partial class Dashboard : Window
     {
        
         data.dapper.user loggininuserd;
         List<CategoricalDataPoint> collection = new List<CategoricalDataPoint>();
 
-        public RMS()
+        public Dashboard()
         {
             InitializeComponent();
            
@@ -270,7 +270,7 @@ html{overflow:hidden;height:200px;}
         private void mi_LogOut(object sender, RoutedEventArgs e)
         {
             Close();
-            new MainWindow().Show();
+            new Login().Show();
         }
         private void mi_sqlquerybuilder(object sender, RoutedEventArgs e)
         {

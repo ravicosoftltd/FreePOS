@@ -1,4 +1,4 @@
-﻿using BusinessBook.data.dapper;
+﻿using FreePOS.data.dapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BusinessBook.Views.others
+namespace FreePOS.Views.others
 {
     /// <summary>
     /// Interaction logic for ProductsTextBoxAutoComplete.xaml

@@ -1,4 +1,4 @@
-﻿<Window x:Class="BusinessBook.MainWindow"
+﻿<Window x:Class="FreePOS.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -14,7 +14,7 @@
         </Button>
         <Button Click="btn_CloseApplication" Content="Close Application" HorizontalAlignment="Left" Margin="194,253,0,0" VerticalAlignment="Top" Width="143" Height="36" FontSize="10" Background="#FF575555">
         </Button>
-        <Label Content="Business Book" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Width="164" FontFamily="DokChampa" FontSize="24" Foreground="#FFDEDEDE"/>
+        <Label Content="FreePOS" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Width="164" FontFamily="DokChampa" FontSize="24" Foreground="#FFDEDEDE"/>
         <Label Content=" Software by www.ravicosoft.com +92 302 4759550  (Release 21.08.11)"  VerticalAlignment="Bottom" HorizontalContentAlignment="Center" Margin="0,0,0,0" FontSize="12" Background="#FF363636" Height="25" Foreground="#DDC7C7C7"/>
         
     </Grid>

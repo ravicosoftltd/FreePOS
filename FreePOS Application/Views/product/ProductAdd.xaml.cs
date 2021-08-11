@@ -11,10 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using BusinessBook.bll;
-using BusinessBook.data;
+using FreePOS.bll;
+using FreePOS.data;
 
-namespace BusinessBook.Views.product
+namespace FreePOS.Views.product
 {
     /// <summary>
     /// Interaction logic for ProductAdd.xaml

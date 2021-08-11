@@ -1,9 +1,9 @@
-﻿<Window x:Class="BusinessBook.Views.finance.salepurchasedetails"
+﻿<Window x:Class="FreePOS.Views.finance.salepurchasedetails"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BusinessBook.Views.finance"
+        xmlns:local="clr-namespace:FreePOS.Views.finance"
         mc:Ignorable="d"
         Title="Details" Width="600" WindowStartupLocation="CenterScreen">
     <Grid>

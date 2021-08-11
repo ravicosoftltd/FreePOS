@@ -1,5 +1,5 @@
-﻿using BusinessBook.bll;
-using BusinessBook.data;
+﻿using FreePOS.bll;
+using FreePOS.data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace BusinessBook.Views.finance
+namespace FreePOS.Views.finance
 {
     /// <summary>
     /// Interaction logic for ledger.xaml

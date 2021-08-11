@@ -1,7 +1,7 @@
 ﻿
-using BusinessBook.bll;
-using BusinessBook.data;
-using BusinessBook.data.dapper;
+using FreePOS.bll;
+using FreePOS.data;
+using FreePOS.data.dapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace BusinessBook.Views.user
+namespace FreePOS.Views.user
 {
     /// <summary>
     /// Interaction logic for Add.xaml

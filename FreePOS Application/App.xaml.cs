@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace BusinessBook
+namespace FreePOS
 {
     public partial class App : Application
     {

@@ -1,5 +1,5 @@
-﻿using BusinessBook.bll;
-using BusinessBook.data.dapper;
+﻿using FreePOS.bll;
+using FreePOS.data.dapper;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace BusinessBook.Views.others
+namespace FreePOS.Views.others
 {
     /// <summary>
     /// Interaction logic for sms.xaml

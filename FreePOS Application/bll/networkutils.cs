@@ -1,5 +1,5 @@
-﻿using BusinessBook.data.dapper;
-using BusinessBook.data.viewmodel;
+﻿using FreePOS.data.dapper;
+using FreePOS.data.viewmodel;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using RestSharp;
@@ -14,12 +14,12 @@ using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using Telerik.Windows.Controls;
 
-namespace BusinessBook.bll
+namespace FreePOS.bll
 {
     public class networkutils
     {
-        //public static string apiendpointdefault = "http://localhost:8011/api/businessbookapi";
-        public static string apiendpointdefault = "http://ravicosoft.com/api/businessbookapi";
+        //public static string apiendpointdefault = "http://localhost:8011/api/FreePOSapi";
+        public static string apiendpointdefault = "http://ravicosoft.com/api/FreePOSapi";
         public static async void updatelocalsetting()
         {
             try
@@ -98,7 +98,7 @@ namespace BusinessBook.bll
             {
                 var apiendpoint = getapiendpoint();
                 RestClient client = new RestClient(apiendpoint);
-                var request = new RestRequest("smsfrombusinessbook");
+                var request = new RestRequest("smsfromFreePOS");
                 var requestobject = new { userid = userutils.ravicosoftuserid.stringvalue,message=message,numbers= string.Join(",", numbers) };
                 request.AddJsonBody(requestobject);
                 otherutils.notify("Info", "Sending SMS to "+ numbers.Length + " numbers", 10000);

@@ -1,4 +1,4 @@
-﻿using BusinessBook.data;
+﻿using FreePOS.data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +13,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using BusinessBook.data.dapper;
+using FreePOS.data.dapper;
 
 
-namespace BusinessBook.Views
+namespace FreePOS.Views
 {
     /// <summary>
     /// Interaction logic for Form_InputDialogForAddCustomerInNewSale.xaml

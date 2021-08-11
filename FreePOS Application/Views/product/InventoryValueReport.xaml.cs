@@ -1,6 +1,6 @@
 ﻿
-using BusinessBook.data;
-using BusinessBook.data.dapper;
+using FreePOS.data;
+using FreePOS.data.dapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Telerik.Windows.Data;
 
-namespace BusinessBook.Views.product
+namespace FreePOS.Views.product
 {
     /// <summary>
     /// Interaction logic for ProductList.xaml

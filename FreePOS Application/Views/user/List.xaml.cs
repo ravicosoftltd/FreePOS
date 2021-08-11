@@ -1,7 +1,7 @@
 ﻿
-using BusinessBook.data;
-using BusinessBook.data.dapper;
-using BusinessBook.Views.finance;
+using FreePOS.data;
+using FreePOS.data.dapper;
+using FreePOS.Views.finance;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -17,7 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace BusinessBook.Views.user
+namespace FreePOS.Views.user
 {
     public partial class List : Window
     {

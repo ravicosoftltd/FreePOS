@@ -1,10 +1,10 @@
 use master
 go
-drop database bbdb
+drop database freepos
 go
-CREATE DATABASE bbdb
+CREATE DATABASE freepos
 GO
-use bbdb 
+use freepos 
 GO
 
 CREATE TABLE [user](

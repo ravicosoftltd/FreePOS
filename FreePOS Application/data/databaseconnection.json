@@ -1,6 +1,6 @@
 {
   "server": "localhost",
-  "database": "bbdb",
+  "database": "freepos",
   "user": "root",
   "password": "brk@1234"
 }

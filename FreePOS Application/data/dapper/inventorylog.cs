@@ -1,4 +1,4 @@
-﻿using BusinessBook.bll;
+﻿using FreePOS.bll;
 using Dapper;
 using Dapper.Contrib.Extensions;
 using MySql.Data.MySqlClient;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessBook.data.dapper
+namespace FreePOS.data.dapper
 {
     [System.ComponentModel.DataAnnotations.Schema.Table("inventorylog")]
 

@@ -1,9 +1,9 @@
-﻿<Window x:Class="BusinessBook.Views.others.DatabaseSettingWindow"
+﻿<Window x:Class="FreePOS.Views.others.DatabaseSettingWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BusinessBook.Views.others"
+        xmlns:local="clr-namespace:FreePOS.Views.others"
         mc:Ignorable="d"
         Title="Database Setting" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
@@ -14,7 +14,7 @@
         <Label Content="Server Address" HorizontalAlignment="Left" Margin="148,76,0,0" VerticalAlignment="Top"/>
         <TextBox Name="tb_DatabaseServer" HorizontalAlignment="Left" Height="23" Margin="294,76,0,0" TextWrapping="Wrap" Text="localhost" VerticalAlignment="Top" Width="361"/>
         <Label Content="Database Name" HorizontalAlignment="Left" Margin="148,126,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb_DatabaseName" HorizontalAlignment="Left" Height="23" Margin="294,126,0,0" TextWrapping="Wrap" Text="bbdb" VerticalAlignment="Top" Width="361"/>
+        <TextBox x:Name="tb_DatabaseName" HorizontalAlignment="Left" Height="23" Margin="294,126,0,0" TextWrapping="Wrap" Text="freepos" VerticalAlignment="Top" Width="361"/>
         <Label Content="Database Username" HorizontalAlignment="Left" Margin="148,176,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tb_DatabaseUsername" HorizontalAlignment="Left" Height="23" Margin="294,176,0,0" TextWrapping="Wrap" Text="root" VerticalAlignment="Top" Width="361"/>
         <Label Content="Database Password" HorizontalAlignment="Left" Margin="148,226,0,0" VerticalAlignment="Top"/>

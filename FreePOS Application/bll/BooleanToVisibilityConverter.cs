@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace BusinessBook.bll
+namespace FreePOS.bll
 {
     public class BooleanToVisibilityConverter : IValueConverter
     {

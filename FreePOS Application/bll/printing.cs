@@ -11,10 +11,10 @@ using System.Windows.Shapes;
 using System.Drawing.Printing;
 using System.Printing;
 using System.Windows.Media;
-using BusinessBook.data.viewmodel;
-using BusinessBook.Properties;
+using FreePOS.data.viewmodel;
+using FreePOS.Properties;
 
-namespace BusinessBook.bll
+namespace FreePOS.bll
 {
     public class printing
     {
