@@ -6,11 +6,11 @@ namespace FreePOS.Views
 
     public sealed partial class UserPage : Page
     {
-        public MainViewModel ViewModel { get; }
+        public UserViewModel ViewModel { get; }
 
         public UserPage()
         {
-            ViewModel = Ioc.Default.GetService<MainViewModel>();
+            ViewModel = Ioc.Default.GetService<UserViewModel>();
             InitializeComponent();
         }
     }

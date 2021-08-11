@@ -84,6 +84,7 @@ namespace FreePOS
             services.AddTransient<DataGridPage>();
             services.AddTransient<SettingsViewModel>();
             services.AddTransient<SettingsPage>();
+            services.AddTransient<BlankPage1>();
             services.AddTransient<UserViewModel>();
             services.AddTransient<UserPage>();
             return services.BuildServiceProvider();

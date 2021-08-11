@@ -15,6 +15,7 @@
     <NoWarn>CA1416, $(NoWarn)</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Views\BlankPage1.xaml" />
     <None Remove="Views\UserPage.xaml" />
   </ItemGroup>
 
@@ -41,6 +42,11 @@
   <ItemGroup>
     <ProjectReference Include="..\FreePOS.Core\FreePOS.Core.csproj" />
     <ProjectReference Include="..\FreePOS.EntityFrameworkCore\FreePOS.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\BlankPage1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\UserPage.xaml">
