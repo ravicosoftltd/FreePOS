@@ -25,6 +25,7 @@ namespace FreePOS.Services
             Configure<ContentGridDetailViewModel, ContentGridDetailPage>();
             Configure<DataGridViewModel, DataGridPage>();
             Configure<SettingsViewModel, SettingsPage>();
+            Configure<UserViewModel, UserPage>();
         }
 
         public Type GetPageType(string key)

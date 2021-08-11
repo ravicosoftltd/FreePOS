@@ -4,11 +4,12 @@ using FreePOS.Activation;
 using FreePOS.Contracts.Services;
 using FreePOS.Core.Contracts.Services;
 using FreePOS.Core.Services;
+using FreePOS.EntityFrameworkCore;
 using FreePOS.Helpers;
 using FreePOS.Services;
 using FreePOS.ViewModels;
 using FreePOS.Views;
-
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
 
@@ -17,6 +18,8 @@ namespace FreePOS
 {
     public partial class App : Application
     {
+        public static IFreePOSRepo Repository { get; private set; }
+
         public static Window MainWindow { get; set; } = new Window() { Title = "AppDisplayName".GetLocalized() };
 
         public App()
@@ -34,6 +37,9 @@ namespace FreePOS
 
         protected override async void OnLaunched(LaunchActivatedEventArgs args)
         {
+            var dbOptions = new DbContextOptionsBuilder<FreePOSContext>().UseMySql(
+                "server=localhost;user=root;database=freepos;port=3306;password=brk@1234");
+            Repository = new FreePOSRepo(dbOptions);
             base.OnLaunched(args);
             var activationService = Ioc.Default.GetService<IActivationService>();
             await activationService.ActivateAsync(args);
@@ -78,6 +84,8 @@ namespace FreePOS
             services.AddTransient<DataGridPage>();
             services.AddTransient<SettingsViewModel>();
             services.AddTransient<SettingsPage>();
+            services.AddTransient<UserViewModel>();
+            services.AddTransient<UserPage>();
             return services.BuildServiceProvider();
         }
     }

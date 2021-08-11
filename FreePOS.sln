@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreePOS", "FreePOS\FreePOS.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreePOS.Core", "FreePOS.Core\FreePOS.Core.csproj", "{A3727285-3B5D-4FFF-95D0-25B7137FAD9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreePOS.EntityFrameworkCore", "FreePOS.EntityFrameworkCore\FreePOS.EntityFrameworkCore.csproj", "{946AA753-5A4C-4780-ABFF-040ED38DA026}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,22 @@ Global
 		{A3727285-3B5D-4FFF-95D0-25B7137FAD9C}.Release|x64.Build.0 = Release|x64
 		{A3727285-3B5D-4FFF-95D0-25B7137FAD9C}.Release|x86.ActiveCfg = Release|x86
 		{A3727285-3B5D-4FFF-95D0-25B7137FAD9C}.Release|x86.Build.0 = Release|x86
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Debug|arm64.Build.0 = Debug|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Debug|x64.Build.0 = Debug|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Debug|x86.Build.0 = Debug|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Release|arm64.ActiveCfg = Release|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Release|arm64.Build.0 = Release|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Release|x64.ActiveCfg = Release|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Release|x64.Build.0 = Release|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Release|x86.ActiveCfg = Release|Any CPU
+		{946AA753-5A4C-4780-ABFF-040ED38DA026}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
