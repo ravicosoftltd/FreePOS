@@ -1,7 +1,6 @@
-# FreePOS-Point Of Sales
+# FreePOS - Point Of Sales
+Point of Sales software for retailers, whole salers, products seller, service sellers, groccers, restaurents, barber shops and any kind of business 
 Window based open source Point of Sales software, built with c#, wpf and mysql.
-For retailers, whole salers, products seller, service sellers, groccers, restaurents, barber shops and any kind of business 
-
 
 
 ## Installation
@@ -45,8 +44,8 @@ Install mysql database, then download the [freepos installer](https://github.com
 * Mysql >= 5.6
 
 ## Contributing / Reporting issues
-
-Create pull request or raise issues and start contributing
+We are looking for contributors
+Create pull request or raise issues and start contributing.
 
 ## License
 
