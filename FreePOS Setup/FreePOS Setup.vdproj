@@ -118,12 +118,6 @@
         "Entry"
         {
         "MsmKey" = "8:_0C93D462EE358DA4CCFF8D8D7D8B7ED3"
-        "OwnerKey" = "8:_738E184929446F72FB092D8161945372"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0C93D462EE358DA4CCFF8D8D7D8B7ED3"
         "OwnerKey" = "8:_0552C42E35D80250213609F636709FE7"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -969,6 +963,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_34AB0D33E7AAB9B29D2B2A2396732150"
+        "OwnerKey" = "8:_87B596AFA96A12CF96D2D87EE2EB31D5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_353BDC54E249B47F846736E132405876"
         "OwnerKey" = "8:_3597E2259F174336B9DFD24EC0538251"
         "MsmSig" = "8:_UNDEFINED"
@@ -1103,12 +1103,6 @@
         {
         "MsmKey" = "8:_38A5C67469B06290FC71B720F8FD43B1"
         "OwnerKey" = "8:_3597E2259F174336B9DFD24EC0538251"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3B631DB2702F4713996CFAAB06C6F92A"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1965,18 +1959,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_615DF77415108E1827E7535EAD63860D"
-        "OwnerKey" = "8:_705AAEF8DD31B7ACDA0445E746C3EAE4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_615DF77415108E1827E7535EAD63860D"
-        "OwnerKey" = "8:_52A67DB08925BB7D13B2C177ABDEBF1B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_62AE2A33B66BA8ED3C9AD9A6B69182DB"
         "OwnerKey" = "8:_33143121B0C3E7B755BF56BF678179BD"
         "MsmSig" = "8:_UNDEFINED"
@@ -2463,8 +2445,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_738E184929446F72FB092D8161945372"
-        "OwnerKey" = "8:_87B596AFA96A12CF96D2D87EE2EB31D5"
+        "MsmKey" = "8:_72C6CD4F23944DA180E33BC2EA24CAA5"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -2632,6 +2614,12 @@
         "Entry"
         {
         "MsmKey" = "8:_87B596AFA96A12CF96D2D87EE2EB31D5"
+        "OwnerKey" = "8:_08C15034ACDFC16103567FE427FA275D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_87B596AFA96A12CF96D2D87EE2EB31D5"
         "OwnerKey" = "8:_3597E2259F174336B9DFD24EC0538251"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2645,6 +2633,18 @@
         {
         "MsmKey" = "8:_88AE8921CE6BB27A945E7065AA1550D6"
         "OwnerKey" = "8:_87B596AFA96A12CF96D2D87EE2EB31D5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_88AE8921CE6BB27A945E7065AA1550D6"
+        "OwnerKey" = "8:_705AAEF8DD31B7ACDA0445E746C3EAE4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_88AE8921CE6BB27A945E7065AA1550D6"
+        "OwnerKey" = "8:_52A67DB08925BB7D13B2C177ABDEBF1B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -6364,12 +6364,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_615DF77415108E1827E7535EAD63860D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_4D4F6AB7CCA37022106557C13E22F534"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -9244,26 +9238,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3B631DB2702F4713996CFAAB06C6F92A"
-            {
-            "SourcePath" = "8:..\\FreePOS Application\\favicon.ico"
-            "TargetName" = "8:favicon.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_11B5653D97704310AEB75C0E2869FE63"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3BD36EAFE0FEAEC93AEE770AFE35D48D"
             {
             "AssemblyRegister" = "3:1"
@@ -10586,37 +10560,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_615DF77415108E1827E7535EAD63860D"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Numerics.Vectors, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_615DF77415108E1827E7535EAD63860D"
-                    {
-                    "Name" = "8:System.Numerics.Vectors.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Numerics.Vectors.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_11B5653D97704310AEB75C0E2869FE63"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_62AE2A33B66BA8ED3C9AD9A6B69182DB"
             {
             "AssemblyRegister" = "3:1"
@@ -11144,21 +11087,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_738E184929446F72FB092D8161945372"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_72C6CD4F23944DA180E33BC2EA24CAA5"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_738E184929446F72FB092D8161945372"
-                    {
-                    "Name" = "8:System.Runtime.CompilerServices.Unsafe.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Runtime.CompilerServices.Unsafe.dll"
-            "TargetName" = "8:"
+            "SourcePath" = "8:..\\FreePOS Application\\favicon.ico"
+            "TargetName" = "8:favicon.ico"
             "Tag" = "8:"
             "Folder" = "8:_11B5653D97704310AEB75C0E2869FE63"
             "Condition" = "8:"
@@ -11172,7 +11104,7 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_74677D66250447299EED3C8A0AE5F4D7"
@@ -15882,7 +15814,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:FreePOS"
         "ProductCode" = "8:{7169F8C9-B6DB-4252-9DD1-28F90BC555BC}"
-        "PackageCode" = "8:{DFB8C451-FA6A-4A15-A63A-EFC1DB3565AF}"
+        "PackageCode" = "8:{B2066706-5862-47AF-A4B2-71D97CB37960}"
         "UpgradeCode" = "8:{82A05332-E13B-45D1-8CC4-B3BD04480B4B}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -16013,7 +15945,7 @@
             "Target" = "8:_3597E2259F174336B9DFD24EC0538251"
             "Folder" = "8:_DD58A6728A304EF38CF3E75B37040339"
             "WorkingFolder" = "8:_11B5653D97704310AEB75C0E2869FE63"
-            "Icon" = "8:_3B631DB2702F4713996CFAAB06C6F92A"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FA2D300DC9F84192AB92DB53DB365DC3"
@@ -16027,7 +15959,7 @@
             "Target" = "8:_3597E2259F174336B9DFD24EC0538251"
             "Folder" = "8:_C1B1DB44765747AFA35EB1C77B670785"
             "WorkingFolder" = "8:_11B5653D97704310AEB75C0E2869FE63"
-            "Icon" = "8:_3B631DB2702F4713996CFAAB06C6F92A"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
         }
