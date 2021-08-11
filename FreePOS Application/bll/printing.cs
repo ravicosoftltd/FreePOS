@@ -117,7 +117,7 @@ namespace FreePOS.bll
             Section footer = new Section();
             //Paragraph footer1 = new Paragraph(new Run("Thank You for Purchaings. For Home Delivery please call us at: 0453-510066"));
             Paragraph footer1 = new Paragraph(new Run(Settings.Default.Footer));
-            Paragraph footer2 = new Paragraph(new Run("Software by www.ravicosoft.com 0302 4759550"));
+            Paragraph footer2 = new Paragraph(new Run("Software by www.freepos.pk 0302 4759550"));
             Paragraph footer3 = new Paragraph(new Run(customerAddress));
             Paragraph footer4 = new Paragraph(new Run("                "));
             footer1.FontSize = 9;

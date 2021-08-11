@@ -3,7 +3,7 @@
   <configSections>
     <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
     <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-      <section name="BusinessBook.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+      <section name="FreePOS.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
     </sectionGroup>
   </configSections>
   <startup>
@@ -20,7 +20,7 @@
     </providers>
   </entityFramework>
   <userSettings>
-    <BusinessBook.Properties.Settings>
+    <FreePOS.Properties.Settings>
       <setting name="PrinterPageWidth" serializeAs="String">
         <value>260</value>
       </setting>
@@ -28,7 +28,7 @@
         <value>40</value>
       </setting>
       <setting name="Title" serializeAs="String">
-        <value>Business Book</value>
+        <value>Free POS</value>
       </setting>
       <setting name="SubTitle" serializeAs="String">
         <value>52, Hussain park, Harbance Pura pull, Lahore</value>
@@ -37,15 +37,15 @@
         <value>5</value>
       </setting>
       <setting name="lastsavedate" serializeAs="String">
-        <value>2020-09-03</value>
+        <value>2021-08-11</value>
       </setting>
       <setting name="Footer" serializeAs="String">
         <value>Call at  (+92 332 2282345)</value>
       </setting>
-    </BusinessBook.Properties.Settings>
+    </FreePOS.Properties.Settings>
   </userSettings>
   <connectionStrings>
-    <add name="dbctx" connectionString="metadata=res://*/data.model.csdl|res://*/data.model.ssdl|res://*/data.model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=bbdbbbb;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="dbctx" connectionString="metadata=res://*/data.model.csdl|res://*/data.model.ssdl|res://*/data.model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=bbdb;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
   </connectionStrings>
   <runtime>
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
