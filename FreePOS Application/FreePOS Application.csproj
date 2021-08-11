@@ -28,11 +28,11 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <SupportUrl>https://ravicosoft.com</SupportUrl>
-    <ProductName>BusinessBook</ProductName>
+    <ProductName>FreePOS</ProductName>
     <SuiteName>Business Management</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>21.08.11.0</ApplicationVersion>
+    <ApplicationVersion>01.00.00.00</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>

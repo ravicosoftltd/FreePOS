@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreePOS Application", "FreePOS Application\FreePOS Application.csproj", "{DB91D8FE-0DA5-4F07-A7F2-3C96E192D704}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FreePOS Setup", "FreePOS Setup\BusinessBook Setup.vdproj", "{BCFB7E4C-9129-489B-A47D-592D994BC5E1}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FreePOS Setup", "FreePOS Setup\FreePOS Setup.vdproj", "{6AF1F34F-8A7B-444E-8EF6-90719AD26368}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{DB91D8FE-0DA5-4F07-A7F2-3C96E192D704}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB91D8FE-0DA5-4F07-A7F2-3C96E192D704}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB91D8FE-0DA5-4F07-A7F2-3C96E192D704}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BCFB7E4C-9129-489B-A47D-592D994BC5E1}.Debug|Any CPU.ActiveCfg = Debug
-		{BCFB7E4C-9129-489B-A47D-592D994BC5E1}.Debug|Any CPU.Build.0 = Debug
-		{BCFB7E4C-9129-489B-A47D-592D994BC5E1}.Release|Any CPU.ActiveCfg = Release
-		{BCFB7E4C-9129-489B-A47D-592D994BC5E1}.Release|Any CPU.Build.0 = Release
+		{6AF1F34F-8A7B-444E-8EF6-90719AD26368}.Debug|Any CPU.ActiveCfg = Debug
+		{6AF1F34F-8A7B-444E-8EF6-90719AD26368}.Debug|Any CPU.Build.0 = Debug
+		{6AF1F34F-8A7B-444E-8EF6-90719AD26368}.Release|Any CPU.ActiveCfg = Release
+		{6AF1F34F-8A7B-444E-8EF6-90719AD26368}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
