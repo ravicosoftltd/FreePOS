@@ -1,0 +1,116 @@
+﻿<Window x:Class="BusinessBook.Views.finance.salenew"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessBook.Views.finance"
+        mc:Ignorable="d"
+        Title="Legered Sale Terminal"
+        Height="600" Width="1050"
+        WindowStartupLocation="CenterOwner"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <TextBox Name="tb_Search" PreviewKeyDown="tb_Search_PreviewKeyDown" TextChanged="tb_Search_TextChanged" Visibility="Visible" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="355" BorderBrush="#89FF0A0A"/>
+        <TextBox Name="tb_Search_Barcode" PreviewKeyDown="tb_Search_Barcode_PreviewKeyDown" Visibility="Hidden" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="355" BorderBrush="#8900BAFF"/>
+        <CheckBox Content="Brcd" Name="BarcodeMode_cb" Checked="BarcodeMode_cb_Checked" Unchecked="BarcodeMode_cb_UnChecked" HorizontalAlignment="Left" Height="25" Margin="376,10,0,0" VerticalAlignment="Top"/>
+        <ListView HorizontalAlignment="Left" Visibility="Hidden" Name="lv_SearchFoodItem" Height="200" Margin="8,40,0,0" VerticalAlignment="Top" Width="357">
+            <ListView.Resources>
+                <Style TargetType="GridViewColumnHeader">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=name}" />
+                    <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Path=price}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Label Content="Customer" HorizontalAlignment="Left" Margin="21,312,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.023,2.917"/>
+        <ComboBox SelectedIndex="0" x:Name="customer_combobox" HorizontalAlignment="Left" Margin="21,328,0,0" VerticalAlignment="Top" Width="363" Height="30"/>
+        <Label Content="Total Payable Bill" HorizontalAlignment="Left" Margin="21,381,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.023,2.917"/>
+        <Label x:Name="total_label" FontSize="40" Content="0" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="21,408,0,0" VerticalAlignment="Top" Width="363" Background="#FF508548" Height="52" Foreground="#DDFFFFFF"/>
+        <Label Content="Total Payment" HorizontalAlignment="Left" Margin="21,478,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.232,2.208"/>
+        <CheckBox IsChecked="False" x:Name="ledger_checkbox" Content="Ledger" HorizontalAlignment="Left" Margin="323,476,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="paying_textbox" FontSize="30" HorizontalContentAlignment="Right" TabIndex="1" HorizontalAlignment="Left" Height="46" Margin="21,494,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="363"/>
+
+        <DataGrid Name="cart_dg" RowEditEnding="cart_dg_roweditending" CanUserAddRows="false" RowHeight="30" FontSize="12" AutoGenerateColumns="False" BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Right" Height="460" Margin="443,10,10,0" VerticalAlignment="Top" Width="580">
+            <DataGrid.Columns>
+
+                <!--<DataGridTextColumn  Header="Name"  Binding="{Binding name,UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>-->
+
+                <DataGridTemplateColumn  Header="Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding name,UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox Margin="0" Padding="0" Text="{Binding name,UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn  Header="Qty">
+                    <DataGridTemplateColumn.CellTemplate >
+                        <DataTemplate>
+                            <TextBlock Text="{Binding quantity,UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox Margin="0" Padding="0" Text="{Binding quantity,UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Price" >
+                    <DataGridTemplateColumn.CellTemplate >
+                        <DataTemplate>
+                            <TextBlock Text="{Binding price,UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox Margin="0" Padding="0" Text="{Binding price,UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Total" >
+                    <DataGridTemplateColumn.CellTemplate >
+                        <DataTemplate>
+                            <TextBlock Text="{Binding total}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="13" Height="13" Click="removeItemFromCart_btn_click" Style="{DynamicResource MaterialDesignIconButton}">
+                                <materialDesign:PackIcon Kind="Delete" Height="13" Width="13" Foreground="#FF7575BF"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Sale" Click="btn_doSale" HorizontalAlignment="Left" Margin="459,499,0,0" VerticalAlignment="Top" Width="565" Height="51"/>
+
+
+
+
+
+
+    </Grid>
+</Window>

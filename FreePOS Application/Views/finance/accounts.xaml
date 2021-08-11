@@ -1,0 +1,28 @@
+﻿<Window x:Class="BusinessBook.Views.finance.accounts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessBook.Views.finance"
+        mc:Ignorable="d"
+        Title="Accounts">
+    <Grid>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="13,12,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_Name" TabIndex="1" Text="" HorizontalAlignment="Left" Height="25" Margin="59,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <Label Content="Parent" HorizontalAlignment="Left" Margin="188,12,0,0" VerticalAlignment="Top"/>
+        <ComboBox SelectedIndex="0" x:Name="parent_combobox" HorizontalAlignment="Left" Margin="235,4,0,0" VerticalAlignment="Top" Width="145" Height="33"/>
+        <Label Content="Type"  HorizontalAlignment="Left" Margin="386,13,0,0" VerticalAlignment="Top"/>
+        <ComboBox SelectedIndex="0" x:Name="category_combobox" HorizontalAlignment="Left" Margin="443,4,0,0" VerticalAlignment="Top" Width="155" Height="33"/>
+        <Button Content="Save" Click="save" HorizontalAlignment="Left" Margin="634,6,0,0" VerticalAlignment="Top" Width="110" Height="34"/>
+        <DataGrid Name="dg" Margin="0,50,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding name}" />
+                <DataGridTextColumn Header="Type" Binding="{Binding type}" />
+                <DataGridTextColumn Header="Parent" Binding="{Binding fk_parent_in_financeaccount_name}" />
+                <DataGridTextColumn Header="Parent id" Binding="{Binding fk_parent_in_financeaccount}" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

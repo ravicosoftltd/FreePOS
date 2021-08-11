@@ -1,0 +1,22 @@
+﻿<Window x:Class="BusinessBook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        Title="Start System" Height="328.503" Width="509.79" Background="Gray" Opacity="0.9" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBox x:Name="tb_Name" FontSize="12" HorizontalAlignment="Left" Margin="132,85,0,0"  VerticalAlignment="Top" Width="254" ToolTip="Username" BorderBrush="#FF494646" Foreground="#FFD1D1D1">
+        </TextBox>
+        <PasswordBox x:Name="tb_Pasword" FontSize="12"  HorizontalAlignment="Left" Margin="132,133,0,0" VerticalAlignment="Top" Width="254" ToolTip="Password" BorderBrush="#FF494646" Foreground="#FFD1D1D1" KeyDown="PressEnter">
+
+        </PasswordBox>
+        <Button Click="btn_Login" Content="Login" HorizontalAlignment="Left" Margin="212,206,0,0" VerticalAlignment="Top" Width="108" Height="36" FontSize="10" Background="#FF575555">
+
+        </Button>
+        <Button Click="btn_CloseApplication" Content="Close Application" HorizontalAlignment="Left" Margin="194,253,0,0" VerticalAlignment="Top" Width="143" Height="36" FontSize="10" Background="#FF575555">
+        </Button>
+        <Label Content="Business Book" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Width="164" FontFamily="DokChampa" FontSize="24" Foreground="#FFDEDEDE"/>
+        <Label Content=" Software by www.ravicosoft.com +92 302 4759550  (Release 21.08.11)"  VerticalAlignment="Bottom" HorizontalContentAlignment="Center" Margin="0,0,0,0" FontSize="12" Background="#FF363636" Height="25" Foreground="#DDC7C7C7"/>
+        
+    </Grid>
+
+</Window>

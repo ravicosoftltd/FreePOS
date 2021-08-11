@@ -1,0 +1,28 @@
+﻿<Window x:Class="BusinessBook.Views.product.inventorylog"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d"
+        Title="Invenotry Log"
+        WindowState="Maximized"
+        Height="Auto" Width="Auto"
+        >
+    <Grid>
+        <Label Content="From Date" HorizontalAlignment="Left" Margin="13,12,0,0" VerticalAlignment="Top"/>
+        <DatePicker  x:Name="fromdate_datepicker"  HorizontalAlignment="Left" Height="25" Margin="75,10,0,0" VerticalAlignment="Top" Width="115"/>
+        <Label Content="To Date" HorizontalAlignment="Left" Margin="210,12,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="tb_todate_datepicker" HorizontalAlignment="Left" Margin="260,4,0,0" VerticalAlignment="Top" Width="145" Height="33"/>
+        <Button Content="Search" Click="search" HorizontalAlignment="Right" Margin="0,6,20,0" VerticalAlignment="Top" Width="110" Height="34"/>
+        <telerik:RadGridView x:Name="dg" ShowSearchPanel="True"
+                     AutoGenerateColumns="False" telerik:StyleManager.Theme="Fluent" Margin="0,50,0,0" >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Id" DataMemberBinding="{Binding id}"/>
+                <telerik:GridViewDataColumn Header="Date" DataMemberBinding="{Binding date}"/>
+                <telerik:GridViewDataColumn Header="Quantity" DataMemberBinding="{Binding quantity}"/>
+                <telerik:GridViewDataColumn Header="Note" DataMemberBinding="{Binding note}"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</Window>

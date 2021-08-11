@@ -1,0 +1,55 @@
+﻿<Window x:Class="BusinessBook.Views.product.InventoryValueReport"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d"
+        Title="Inventory Value Report" WindowState="Maximized" Height="Auto" Width="Auto"
+        >
+    <Grid>
+        <telerik:RadGridView
+            x:Name="dg"
+            ShowSearchPanel="True"
+            ShowColumnFooters="True"
+            AutoGenerateColumns="False"
+            telerik:StyleManager.Theme="Fluent"
+            >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Id" DataMemberBinding="{Binding id}" Background="#FFD6D6D6">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:CountFunction Caption="Total: " />
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="Name" DataMemberBinding="{Binding name}"/>
+                <telerik:GridViewDataColumn Header="Barcode" DataMemberBinding="{Binding barcode}"/>
+                <telerik:GridViewDataColumn Header="Category" DataMemberBinding="{Binding category}"/>
+                <telerik:GridViewDataColumn Header="Quantity" DataMemberBinding="{Binding quantity}" Background="#FFC8E5FB"/>
+                <telerik:GridViewDataColumn Header="Purchase Price" DataMemberBinding="{Binding purchaseprice}" Background="#FFD8B7E2" />
+                <telerik:GridViewDataColumn Header="Carrycost" DataMemberBinding="{Binding carrycost}"/>
+                <telerik:GridViewDataColumn Header="Purchase Value" DataMemberBinding="{Binding purchasevalue}" Background="#FFD28BE8">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:SumFunction Caption="Total: " />
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="Purchase Value w Carry" DataMemberBinding="{Binding purchasevaluewcarrycost}">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:SumFunction Caption="Total: " />
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="Sale Price" DataMemberBinding="{Binding saleprice}" Background="#FFBAD3BC"/>
+                <telerik:GridViewDataColumn Header="Discount" DataMemberBinding="{Binding discount}"/>
+                <telerik:GridViewDataColumn Header="Sale Value" DataMemberBinding="{Binding salevalue}" Background="#FF8FDE95">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:SumFunction Caption="Total: " />
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="Sale Value w Discount" DataMemberBinding="{Binding salevaluewdiscount}">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:SumFunction Caption="Total: " />
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</Window>

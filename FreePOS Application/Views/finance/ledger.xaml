@@ -1,0 +1,38 @@
+﻿<Window x:Class="BusinessBook.Views.finance.ledger"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessBook.Views.finance" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Height="auto"
+        Width="auto"
+        Title="Ledger">
+    <Grid>
+        <Grid VerticalAlignment="Top"  Margin="10,0,10,0" >
+            <Label Content="Amount" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center"/>
+            <TextBox x:Name="tb_amount" TabIndex="1" Text="" HorizontalAlignment="Left" Margin="74,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Center" Width="115"/>
+
+            <Label Content="Account" HorizontalAlignment="Left" Margin="228,12,0,0" VerticalAlignment="Center"/>
+            <ComboBox SelectedIndex="0" x:Name="account_combobox" HorizontalAlignment="Left" Margin="295,4,0,0"  VerticalAlignment="Center" Width="145"/>
+            <Button Content="Save" Click="save" HorizontalAlignment="Left" Margin="478,6,0,0"  VerticalAlignment="Center"/>
+            <Label  Content="Balance" HorizontalAlignment="Right" Margin="0,0,100,0"  VerticalAlignment="Center"/>
+            <Label Name="remaining_label" Content="0" HorizontalAlignment="Right" Margin="0,0,0,0" FontSize="32"  VerticalAlignment="Center" Foreground="#DD0071CF"/>
+
+        </Grid>
+        
+        <telerik:RadGridView x:Name="dg" Margin="0,60,0,0" ShowSearchPanel="True"
+                     AutoGenerateColumns="False" telerik:StyleManager.Theme="Fluent" >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Id" DataMemberBinding="{Binding id}" />
+                <telerik:GridViewDataColumn Header="Date" DataMemberBinding="{Binding date}" />
+                <telerik:GridViewDataColumn Header="Account" DataMemberBinding="{Binding accountname}" />
+                <telerik:GridViewDataColumn Header="Description" DataMemberBinding="{Binding name}" />
+                <telerik:GridViewDataColumn Header="Creator" DataMemberBinding="{Binding createdby}" />
+                <telerik:GridViewDataColumn Header="Status" DataMemberBinding="{Binding status}" />
+                <telerik:GridViewDataColumn Header="Amount" DataMemberBinding="{Binding amount}" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</Window>

@@ -1,0 +1,23 @@
+﻿<Window x:Class="BusinessBook.Views.finance.cashclosing"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessBook.Views.finance" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d"
+        Title="Cash Closing Report">
+    <Grid>
+        <telerik:RadGridView x:Name="dg" Margin="0,0,0,0" ShowSearchPanel="True"
+                     AutoGenerateColumns="False" telerik:StyleManager.Theme="Fluent" >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Id" DataMemberBinding="{Binding id}" />
+                <telerik:GridViewDataColumn Header="Date" DataMemberBinding="{Binding date}" />
+                <telerik:GridViewDataColumn Header="User" DataMemberBinding="{Binding username}" />
+                <telerik:GridViewDataColumn Header="Sale" DataMemberBinding="{Binding sale}" />
+                <telerik:GridViewDataColumn Header="Expence" DataMemberBinding="{Binding expence}" />
+                <telerik:GridViewDataColumn Header="Closing Balance" DataMemberBinding="{Binding closingbalance}" />
+                <telerik:GridViewDataColumn Header="Note" DataMemberBinding="{Binding note}" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</Window>

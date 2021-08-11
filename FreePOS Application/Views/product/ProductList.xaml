@@ -1,0 +1,56 @@
+﻿<Window x:Class="BusinessBook.Views.product.ProductList"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d"
+        Title="Products" WindowState="Maximized" Height="Auto" Width="Auto" 
+        >
+    <Grid>
+        <telerik:RadGridView
+            EnableColumnVirtualization="True"
+            EnableRowVirtualization="True"
+            x:Name="dg_ProductList"
+            RowEditEnded="dg_roweditended"
+            ShowSearchPanel="True"
+            ShowColumnFooters="True"
+            AutoGenerateColumns="False"
+            CanUserInsertRows="False"
+            telerik:StyleManager.Theme="Fluent"
+            >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Id" DataMemberBinding="{Binding id}" Background="#FFD6D6D6">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:CountFunction Caption="Total: " />
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                
+                <telerik:GridViewDataColumn Header="Name" DataMemberBinding="{Binding name}"/>
+                <telerik:GridViewDataColumn Header="Barcode" DataMemberBinding="{Binding barcode}"/>
+                <telerik:GridViewDataColumn Header="Category" DataMemberBinding="{Binding category}"/>
+                <telerik:GridViewDataColumn Header="Quantity" DataMemberBinding="{Binding quantity}"/>
+                <telerik:GridViewDataColumn Header="Sale Active" DataMemberBinding="{Binding saleactive}"/>
+                <telerik:GridViewDataColumn Header="Purchase Active" DataMemberBinding="{Binding purchaseactive}"/>
+                <telerik:GridViewDataColumn Header="Purchase Price" DataMemberBinding="{Binding purchaseprice}"/>
+                <telerik:GridViewDataColumn Header="Carrycost" DataMemberBinding="{Binding carrycost}"/>
+                <telerik:GridViewDataColumn Header="Sale Price" DataMemberBinding="{Binding saleprice}"/>
+                <telerik:GridViewDataColumn Header="Discount" DataMemberBinding="{Binding discount}"/>
+                <telerik:GridViewColumn Header="Edit" >
+                    <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadButton Click="edit">Edit</telerik:RadButton>
+                        </DataTemplate>
+                    </telerik:GridViewColumn.CellTemplate>
+                </telerik:GridViewColumn>
+                <telerik:GridViewColumn Header="Report" >
+                    <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadButton Click="inventorylog">Inventory Log</telerik:RadButton>
+                        </DataTemplate>
+                    </telerik:GridViewColumn.CellTemplate>
+                </telerik:GridViewColumn>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</Window>

@@ -1,0 +1,48 @@
+﻿<Window x:Class="BusinessBook.Views.finance.expences"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessBook.Views.finance" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Width="auto"
+        Height="auto"
+        Title="Expences">
+    <Grid>
+        <Label Content="Amount" HorizontalAlignment="Left" Margin="11,12,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_amount" TabIndex="1" Text="" HorizontalAlignment="Left" Height="25" Margin="64,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83"/>
+
+        <Label Content="Pay acct" HorizontalAlignment="Left" Margin="160,12,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="payingaccount_combobox" HorizontalAlignment="Left" Margin="207,4,0,0" VerticalAlignment="Top" Width="145" Height="33"/>
+        <Label Content="Exp acct" HorizontalAlignment="Left" Margin="384,11,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="expenceaccount_combobox" HorizontalAlignment="Left" Margin="431,3,0,0" VerticalAlignment="Top" Width="158" Height="33"/>
+
+        <Button Content="Save" Click="save" HorizontalAlignment="Left" Margin="628,6,0,0" VerticalAlignment="Top" Width="116" Height="34"/>
+        <!--<DataGrid Name="dg" Margin="0,60,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Amount" Binding="{Binding amount}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding name}" />
+                <DataGridTextColumn Header="Account" Binding="{Binding financeaccount.name}" />
+                <DataGridTextColumn Header="Creator" Binding="{Binding user.name}" />
+                <DataGridTextColumn Header="Party" Binding="{Binding user1.name}" />
+                <DataGridTextColumn Header="Date" Binding="{Binding date}" />
+                <DataGridTextColumn Header="Group" Binding="{Binding groupid}" />
+                <DataGridTextColumn Header="Status" Binding="{Binding status}" />
+            </DataGrid.Columns>
+        </DataGrid>-->
+        <telerik:RadGridView x:Name="dg" Margin="0,60,0,0" ShowSearchPanel="True"
+                     AutoGenerateColumns="False" telerik:StyleManager.Theme="Fluent" >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Id" DataMemberBinding="{Binding id}" />
+                <telerik:GridViewDataColumn Header="Date" DataMemberBinding="{Binding date}" />
+                <telerik:GridViewDataColumn Header="Account" DataMemberBinding="{Binding accountname}" />
+                <telerik:GridViewDataColumn Header="Description" DataMemberBinding="{Binding name}" />
+                <telerik:GridViewDataColumn Header="Creator" DataMemberBinding="{Binding createdby}" />
+                <telerik:GridViewDataColumn Header="Status" DataMemberBinding="{Binding status}" />
+                <telerik:GridViewDataColumn Header="Amount" DataMemberBinding="{Binding amount}" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</Window>
