@@ -22,9 +22,8 @@ namespace FreePOS.bll
                 if (item.saleprice != null) {
                     a.price = (double)item.saleprice;
                 }
-                var discount = 0;
                 if (item.discount != null) {
-                    a.price = a.price - discount;
+                    a.price = a.price - (double)item.discount;
                 };
                 a.total = a.price;
                 mappedList.Add(a);

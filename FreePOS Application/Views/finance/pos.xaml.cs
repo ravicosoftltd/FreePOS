@@ -108,22 +108,34 @@ namespace FreePOS.Views.finance
         private void removeItemFromCart_btn_click(object sender, RoutedEventArgs e)
         {
             productsaleorpurchaseviewmodel obj = ((FrameworkElement)sender).DataContext as productsaleorpurchaseviewmodel;
+            removeItemFromCart(obj);
+        }
+        void removeItemFromCart(productsaleorpurchaseviewmodel item) {
             cart_dg.SelectedItem = null;
             lastInsertedProductInCart = null;
             foreach (productsaleorpurchaseviewmodel oldItem in cart)
             {
-                if (obj.id == oldItem.id)
+                if (item.id == oldItem.id)
                 {
-                    cart.Remove(obj);
+                    cart.Remove(item);
                     refreshCartAndTotal();
                     break;
                 }
             }
         }
-
-        private void grid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        void minusQuantityOfItem_To_cart(productsaleorpurchaseviewmodel item)
         {
-            //Both the DataTable and the row obtained from "e" has the old row. 
+            lastInsertedProductInCart = item;
+            foreach (productsaleorpurchaseviewmodel oldItem in cart)
+            {
+                if (item.id == oldItem.id)
+                {
+                    oldItem.quantity -= 1;
+                    oldItem.total = oldItem.quantity * oldItem.price;
+                    refreshCartAndTotal();
+                    return;
+                }
+            }
         }
         private async void cart_dg_roweditending(object sender, DataGridRowEditEndingEventArgs e)
         {
@@ -198,12 +210,32 @@ namespace FreePOS.Views.finance
                 }
                 return;
             }
-            else if (e.Key == Key.Enter)
+            else if (e.Key == Key.Enter || e.Key == Key.OemPlus)
             {
                 if (lv_SearchFoodItem.SelectedItem != null)
                 {
                     productsaleorpurchaseviewmodel item = (productsaleorpurchaseviewmodel)lv_SearchFoodItem.SelectedItem;
                     addItem_To_cart(item);
+                    tb_Search.Text = "";
+                    lv_SearchFoodItem.Visibility = Visibility.Hidden;
+                }
+            }
+            else if (e.Key == Key.OemMinus)
+            {
+                if (lv_SearchFoodItem.SelectedItem != null)
+                {
+                    productsaleorpurchaseviewmodel item = (productsaleorpurchaseviewmodel)lv_SearchFoodItem.SelectedItem;
+                    minusQuantityOfItem_To_cart(item);
+                    tb_Search.Text = "";
+                    lv_SearchFoodItem.Visibility = Visibility.Hidden;
+                }
+            }
+            else if (e.Key == Key.Delete)
+            {
+                if (lv_SearchFoodItem.SelectedItem != null)
+                {
+                    productsaleorpurchaseviewmodel item = (productsaleorpurchaseviewmodel)lv_SearchFoodItem.SelectedItem;
+                    removeItemFromCart(item);
                     tb_Search.Text = "";
                     lv_SearchFoodItem.Visibility = Visibility.Hidden;
                 }
