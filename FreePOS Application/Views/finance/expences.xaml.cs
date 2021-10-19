@@ -1,5 +1,6 @@
 ﻿using FreePOS.bll;
 using FreePOS.data;
+using FreePOS.data.dapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,22 +22,13 @@ namespace FreePOS.Views.finance
     /// </summary>
     public partial class expences : Window
     {
-        //List<financeaccount> financeaccounts = null;
+        financeaccountrepo financeaccountrepo = new data.dapper.financeaccountrepo();
         List<data.dapper.financeaccount> financeaccounts = null;
+        financetransactionrepo financetransactionrepo = new data.dapper.financetransactionrepo();
         public expences()
         {
             InitializeComponent();
-            //var db = new dbctx();
-            //financeaccounts = db.financeaccount.ToList();
-            var financeaccountrepo = new data.dapper.financeaccountrepo();
-            var financetransactionrepo = new data.dapper.financetransactionrepo();
             financeaccounts = financeaccountrepo.get();
-            //var list = db.financetransaction.Where(a => (a.financeaccount.type == "expence")).ToList();
-            var list = financetransactionrepo.getmanybyfinanceaccounttype("expence");
-            foreach (var item in list)
-            {
-                dg.Items.Add(item);
-            }
             var assetaccounts = financeaccounts.Where(a => a.type == "asset").ToList();
             payingaccount_combobox.ItemsSource = assetaccounts;
             payingaccount_combobox.DisplayMemberPath = "name";
@@ -48,6 +40,24 @@ namespace FreePOS.Views.finance
 
         }
 
+        private void Btn_Search_Transactions_Click(object sender, RoutedEventArgs e)
+        {
+            var fromdate = FromDate.SelectedDate;
+            var toDate = ToDate.SelectedDate;
+            if (fromdate != null && toDate != null)
+            {
+                toDate = TimeUtils.getEndDate(toDate);
+                dg.ItemsSource = null;
+                dg.Items.Clear();
+                dg.Items.Refresh();
+                var list = financetransactionrepo.getmanybyfinanceaccounttype("expence",fromdate,toDate);
+                foreach (var item in list)
+                {
+                    dg.Items.Add(item);
+                }
+            }
+
+        }
         private void save(object sender, RoutedEventArgs e) 
         {
             try 

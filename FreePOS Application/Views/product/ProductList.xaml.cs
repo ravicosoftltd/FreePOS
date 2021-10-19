@@ -26,19 +26,47 @@ namespace FreePOS.Views.product
     public partial class ProductList : Window
     {
         List<data.dapper.product> items;
+        productrepo productrepo = new productrepo();
         public ProductList()
         {
             InitializeComponent();
-            initFormOperations();
         }
-        private void initFormOperations()
+        private void Btn_Search_Transactions_Click(object sender, RoutedEventArgs e)
         {
-            // var db = dbctxsinglton.getInstance();
-            var productrepo = new productrepo().get();
-            dg_ProductList.ItemsSource = null;
-            items = productrepo;
-            dg_ProductList.ItemsSource = productrepo;
+            var searchType = searchType_cb.SelectedValue as ComboBoxItem;
+            var searchTypeText = searchType.Content as string;
+            if (searchTypeText == "Product" && query_tb.Text == "")
+            {
+                return;
+            }
+            dg.ItemsSource = null;
+            dg.Items.Clear();
+            dg.Items.Refresh();
+            if (searchTypeText == "All")
+            {
+                var list = productrepo.get();
+                items = list;
+                dg.ItemsSource = null;
+                foreach (var item in list)
+                {
+                    dg.Items.Add(item);
+                }
+
+            }
+            else
+            {
+                var searchBy = (searchTypeText == "Category") ? "category" : "name";
+                var list = productrepo.search(query_tb.Text, searchBy, null);
+                items = list;
+
+                dg.ItemsSource = null;
+                foreach (var item in list)
+                {
+                    dg.Items.Add(item);
+                }
+            }
             UpdateLayout();
+
         }
         public void edit(object sender, RoutedEventArgs e)
         {

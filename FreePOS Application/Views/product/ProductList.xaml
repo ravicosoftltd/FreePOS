@@ -8,10 +8,20 @@
         Title="Products" WindowState="Maximized" Height="Auto" Width="Auto" 
         >
     <Grid>
+        <Label Content="Search" HorizontalAlignment="Left" Margin="11,12,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="query_tb" TabIndex="1" Text="" HorizontalAlignment="Left" Height="25" Margin="64,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
+        <ComboBox x:Name="searchType_cb" HorizontalAlignment="Left" Margin="326,4,0,0" VerticalAlignment="Top" Width="145" Height="33">
+            <ComboBoxItem Selector.IsSelected="True" Content="Product" Tag="Product"/>
+            <ComboBoxItem Content="Category" Tag="Category"/>
+            <ComboBoxItem Content="All" Tag="All"/>
+        </ComboBox>
+        <Button Click="Btn_Search_Transactions_Click" Content="Search" HorizontalAlignment="Left" Margin="554,16,0,0" VerticalAlignment="Top" Width="75"/>
+
         <telerik:RadGridView
+            x:Name="dg"
+            Margin="0,60,0,0"
             EnableColumnVirtualization="True"
             EnableRowVirtualization="True"
-            x:Name="dg_ProductList"
             RowEditEnded="dg_roweditended"
             ShowSearchPanel="True"
             ShowColumnFooters="True"

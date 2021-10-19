@@ -23,37 +23,80 @@ namespace FreePOS.Views.product
     /// </summary>
     public partial class InventoryValueReport : Window
     {
+        productrepo productrepo = new productrepo();
         public InventoryValueReport()
         {
             InitializeComponent();
-            initFormOperations();
         }
-        private void initFormOperations()
+        private void Btn_Search_Transactions_Click(object sender, RoutedEventArgs e)
         {
-            var productrepo = new productrepo().get();
-
-            var invenotryreport = from p in productrepo
-                                  select new
-                                  {
-                                      id = p.id,
-                                      name = p.name,
-                                      saleprice = p.saleprice,
-                                      purchaseprice = p.purchaseprice,
-                                      discount = p.discount,
-                                      carrycost = p.carrycost,
-                                      barcode = p.barcode,
-                                      quantity = p.quantity,
-                                      category = p.category,
-                                      salevalue = p.saleprice*p.quantity,
-                                      salevaluewdiscount = (p.saleprice - p.discount) * p.quantity,
-                                      purchasevalue = p.purchaseprice * p.quantity,
-                                      purchasevaluewcarrycost = (p.purchaseprice + p.carrycost) * p.quantity
-                                  };
-
+            var searchType = searchType_cb.SelectedValue as ComboBoxItem;
+            var searchTypeText = searchType.Content as string;
+            if (searchTypeText == "Product" && query_tb.Text == "") 
+            {
+                return;
+            }
             dg.ItemsSource = null;
-            dg.ItemsSource = invenotryreport;
-            
+            dg.Items.Clear();
+            dg.Items.Refresh();
+            if (searchTypeText == "All")
+            {
+                var products = productrepo.get();
+                var list = from p in products
+                           select new
+                           {
+                               id = p.id,
+                               name = p.name,
+                               saleprice = p.saleprice,
+                               purchaseprice = p.purchaseprice,
+                               discount = p.discount,
+                               carrycost = p.carrycost,
+                               barcode = p.barcode,
+                               quantity = p.quantity,
+                               category = p.category,
+                               salevalue = p.saleprice * p.quantity,
+                               salevaluewdiscount = (p.saleprice - p.discount) * p.quantity,
+                               purchasevalue = p.purchaseprice * p.quantity,
+                               purchasevaluewcarrycost = (p.purchaseprice + p.carrycost) * p.quantity
+                           };
+
+                dg.ItemsSource = null;
+                foreach (var item in list)
+                {
+                    dg.Items.Add(item);
+                }
+                
+            }
+            else
+            {
+                var searchBy = (searchTypeText == "Category") ? "category" : "name";
+                var products = productrepo.search(query_tb.Text, searchBy, null);
+                var list = from p in products
+                           select new
+                           {
+                               id = p.id,
+                               name = p.name,
+                               saleprice = p.saleprice,
+                               purchaseprice = p.purchaseprice,
+                               discount = p.discount,
+                               carrycost = p.carrycost,
+                               barcode = p.barcode,
+                               quantity = p.quantity,
+                               category = p.category,
+                               salevalue = p.saleprice * p.quantity,
+                               salevaluewdiscount = (p.saleprice - p.discount) * p.quantity,
+                               purchasevalue = p.purchaseprice * p.quantity,
+                               purchasevaluewcarrycost = (p.purchaseprice + p.carrycost) * p.quantity
+                           };
+
+                dg.ItemsSource = null;
+                foreach (var item in list)
+                {
+                    dg.Items.Add(item);
+                }
+            }
             UpdateLayout();
+
         }
     }
 }

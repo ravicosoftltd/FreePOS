@@ -62,7 +62,7 @@ namespace FreePOS.data.dapper
                 return res;
             }
         }
-        public List<dapper.financetransactionextended> getmanybymanyfinanceaccountnames(string[] financeaccountnames)
+        public List<dapper.financetransactionextended> getmanybymanyfinanceaccountnames(string[] financeaccountnames, DateTime? fromDate, DateTime? toDate)
         {
             financeaccountrepo financeaccountrepo = new financeaccountrepo();
             List<financeaccount> financeaccounts = financeaccountrepo.getmanybynames(financeaccountnames);
@@ -75,11 +75,11 @@ namespace FreePOS.data.dapper
             string sql = "select " + joinselect + " where t1.fk_financeaccount_in_financetransaction in (" + financeaccountsidarray + ");";
             using (var connection = new MySqlConnection(conn))
             {
-                var res = connection.Query<dapper.financetransactionextended>(sql).ToList();
+                var res = connection.Query<dapper.financetransactionextended>(sql).Where(a => a.date >= fromDate && a.date <= toDate).ToList();
                 return res;
             }
         }
-        public List<dapper.financetransactionextended> getmanybyselfnameandfinanceaccountname(string selfname,string financeaccountname)
+        public List<dapper.financetransactionextended> getmanybyselfnameandfinanceaccountname(string selfname,string financeaccountname, DateTime? fromDate, DateTime? toDate)
         {
             financeaccountrepo financeaccountrepo = new financeaccountrepo();
             financeaccount financeaccount = financeaccountrepo.getonebyname(financeaccountname);
@@ -87,11 +87,11 @@ namespace FreePOS.data.dapper
             string sql = "select " + joinselect + " where t1.name='" + selfname+"' and t1.fk_financeaccount_in_financetransaction=" + financeaccount.id + ";";
             using (var connection = new MySqlConnection(conn))
             {
-                var res = connection.Query<dapper.financetransactionextended>(sql).ToList();
+                var res = connection.Query<dapper.financetransactionextended>(sql).Where(a => a.date >= fromDate && a.date <= toDate).ToList();
                 return res;
             }
         }
-        public List<financetransactionextended> getmanybyfinanceaccounttype(string financeaccounttype)
+        public List<financetransactionextended> getmanybyfinanceaccounttype(string financeaccounttype, DateTime? fromDate, DateTime? toDate)
         {
             financeaccountrepo financeaccountrepo = new financeaccountrepo();
             List<financeaccount> financeaccounts = financeaccountrepo.getmanybytype(financeaccounttype);
@@ -105,7 +105,7 @@ namespace FreePOS.data.dapper
             string sql = "select " + joinselect + " where fk_financeaccount_in_financetransaction in (" + whereincontent + ");";
             using (var connection = new MySqlConnection(conn))
             {
-                var res = connection.Query<financetransactionextended>(sql).ToList();
+                var res = connection.Query<financetransactionextended>(sql).Where(a => a.date >= fromDate && a.date <= toDate).ToList();
                 return res;
             }
         }

@@ -17,22 +17,16 @@
         <ComboBox x:Name="payingaccount_combobox" HorizontalAlignment="Left" Margin="207,4,0,0" VerticalAlignment="Top" Width="145" Height="33"/>
         <Label Content="Exp acct" HorizontalAlignment="Left" Margin="384,11,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="expenceaccount_combobox" HorizontalAlignment="Left" Margin="431,3,0,0" VerticalAlignment="Top" Width="158" Height="33"/>
-
         <Button Content="Save" Click="save" HorizontalAlignment="Left" Margin="628,6,0,0" VerticalAlignment="Top" Width="116" Height="34"/>
-        <!--<DataGrid Name="dg" Margin="0,60,0,0">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding id}" />
-                <DataGridTextColumn Header="Amount" Binding="{Binding amount}" />
-                <DataGridTextColumn Header="Name" Binding="{Binding name}" />
-                <DataGridTextColumn Header="Account" Binding="{Binding financeaccount.name}" />
-                <DataGridTextColumn Header="Creator" Binding="{Binding user.name}" />
-                <DataGridTextColumn Header="Party" Binding="{Binding user1.name}" />
-                <DataGridTextColumn Header="Date" Binding="{Binding date}" />
-                <DataGridTextColumn Header="Group" Binding="{Binding groupid}" />
-                <DataGridTextColumn Header="Status" Binding="{Binding status}" />
-            </DataGrid.Columns>
-        </DataGrid>-->
-        <telerik:RadGridView x:Name="dg" Margin="0,60,0,0" ShowSearchPanel="True"
+
+        <Label Content="From Date" HorizontalAlignment="Left" Margin="6,61,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="FromDate" HorizontalAlignment="Left" Margin="187,61,0,0" VerticalAlignment="Top"/>
+        <Label Content="To Date" HorizontalAlignment="Left" Margin="328,61,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="ToDate" HorizontalAlignment="Left" Margin="384,61,0,0" VerticalAlignment="Top"/>
+        <Button Click="Btn_Search_Transactions_Click" Content="Search" HorizontalAlignment="Left" Margin="554,61,0,0" VerticalAlignment="Top" Width="75"/>
+
+
+        <telerik:RadGridView x:Name="dg" Margin="0,120,0,0" ShowSearchPanel="True"
                      AutoGenerateColumns="False" telerik:StyleManager.Theme="Fluent" >
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn Header="Id" DataMemberBinding="{Binding id}" />

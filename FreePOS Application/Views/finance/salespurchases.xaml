@@ -10,8 +10,15 @@
         Height="auto"
         Title="List">
     <Grid>
+        <Label Content="From Date" HorizontalAlignment="Left" Margin="6,16,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="FromDate" HorizontalAlignment="Left" Margin="187,16,0,0" VerticalAlignment="Top"/>
+        <Label Content="To Date" HorizontalAlignment="Left" Margin="328,16,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="ToDate" HorizontalAlignment="Left" Margin="384,16,0,0" VerticalAlignment="Top"/>
+        <Button Click="Btn_Search_Transactions_Click" Content="Search" HorizontalAlignment="Left" Margin="554,16,0,0" VerticalAlignment="Top" Width="75"/>
+
         <telerik:RadGridView
-            x:Name="dg" 
+            x:Name="dg"
+            Margin="0,60,0,0" 
             ShowSearchPanel="True"
             ShowColumnFooters="True"
             AutoGenerateColumns="False" 

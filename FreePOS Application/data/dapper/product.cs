@@ -30,7 +30,8 @@ namespace FreePOS.data.dapper
     public class productrepo
     {
         string conn = databaseutils.connectionstring;
-        public List<dapper.product> get() {
+        public List<dapper.product> get()
+        {
             using (var connection = new MySqlConnection(conn))
             {
                 var res = connection.GetAll<dapper.product>().ToList();
@@ -45,20 +46,45 @@ namespace FreePOS.data.dapper
                 return res;
             }
         }
-        public List<dapper.product> search(string name,int limit=5)
+        public List<dapper.product> search(string query,string searchBy, int? limit = 5)
         {
-            if (name.Length > 0)
+            if (query.Length > 0)
             {
                 using (var connection = new MySqlConnection(conn))
                 {
-                    var res = connection.GetAll<dapper.product>().Where(a => (a.name.ToLower() == name.ToLower() || a.name.ToLower().Contains(name.ToLower()))).Take(limit).ToList();
-                    return res;
+                    if (limit == null)
+                    {
+                        if (searchBy=="category") 
+                        {
+                            var res = connection.GetAll<dapper.product>().Where(a => (a.category.SafeToLower() == query.ToLower() || a.category.SafeToLower().Contains(query.ToLower()))).ToList();
+                            return res;
+                        } else 
+                        {
+                            var res = connection.GetAll<dapper.product>().Where(a => (a.name.SafeToLower() == query.ToLower() || a.name.SafeToLower().Contains(query.ToLower()))).ToList();
+                            return res;
+                        }
+                    }
+                    else
+                    {
+                        if (searchBy == "category") 
+                        {
+                            var res = connection.GetAll<dapper.product>().Where(a => (a.category.SafeToLower() == query.ToLower() || a.category.SafeToLower().Contains(query.ToLower()))).Take((int)limit).ToList();
+                            return res;
+                        } else 
+                        {
+                            var res = connection.GetAll<dapper.product>().Where(a => (a.name.SafeToLower() == query.ToLower() || a.name.SafeToLower().Contains(query.ToLower()))).Take((int)limit).ToList();
+                            return res;
+                        }
+                        
+                    }
+
                 }
             }
-            else {
+            else
+            {
                 return new List<dapper.product>();
             }
-            
+
         }
         public bool save(dapper.product product)
         {

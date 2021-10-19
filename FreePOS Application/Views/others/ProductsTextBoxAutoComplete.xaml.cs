@@ -89,7 +89,7 @@ namespace FreePOS.Views.others
 
                 this.OpenAutoSuggestionBox();
 
-                this.productsListBox.ItemsSource = this.productrepo.search(this.autoTextBox.Text);
+                this.productsListBox.ItemsSource = this.productrepo.search(this.autoTextBox.Text,"name");
 
             }
             catch (Exception ex)

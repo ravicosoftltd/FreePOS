@@ -23,36 +23,49 @@ namespace FreePOS.Views.finance
     /// </summary>
     public partial class salespurchases : Window
     {
-        List<data.dapper.financeaccount> financeaccounts = null;
-
+        
         string listtype;
+        financetransactionrepo financetransactionrepo= new data.dapper.financetransactionrepo();
         public salespurchases(string type)
         {
             InitializeComponent();
-            listtype = type;
-            var financeaccountrepo = new data.dapper.financeaccountrepo();
-            var financetransactionrepo = new data.dapper.financetransactionrepo();
-                financeaccounts = financeaccountrepo.get();
-            
-            List<financetransactionextended> list = new List<financetransactionextended>();
-            if (type == "sale") 
-            {
-                this.Title = "Sales";
-                list = financetransactionrepo.getmanybymanyfinanceaccountnames(new string[]{ "pos sale","sale","service sale"});
-            }
-            else if(type == "purchase")
+            listtype = type;;
+            this.Title = "Sales";
+            if (listtype == "purchase")
             {
                 this.Title = "Purchases";
-                list = financetransactionrepo.getmanybyselfnameandfinanceaccountname("--inventory--on--purchase--", "inventory");
             }
-            foreach (var item in list)
+        }
+        private void Btn_Search_Transactions_Click(object sender, RoutedEventArgs e)
+        {
+            var fromdate = FromDate.SelectedDate;
+            var toDate = ToDate.SelectedDate;
+            if (fromdate != null && toDate != null)
             {
-                if (type == "sale") 
+                toDate = TimeUtils.getEndDate(toDate);
+                dg.ItemsSource = null;
+                dg.Items.Clear();
+                dg.Items.Refresh();
+                List<financetransactionextended> list = new List<financetransactionextended>();
+                if (listtype == "sale")
                 {
-                    item.amount = -item.amount;
-                };
-                dg.Items.Add(item);
+                    
+                    list = financetransactionrepo.getmanybymanyfinanceaccountnames(new string[] { "pos sale", "sale", "service sale" }, fromdate, toDate);
+                }
+                else if (listtype == "purchase")
+                {
+                    list = financetransactionrepo.getmanybyselfnameandfinanceaccountname("--inventory--on--purchase--", "inventory", fromdate, toDate);
+                }
+                foreach (var item in list)
+                {
+                    if (listtype == "sale")
+                    {
+                        item.amount = -item.amount;
+                    };
+                    dg.Items.Add(item);
+                }
             }
+
         }
         public void details(object sender, RoutedEventArgs e)
         {

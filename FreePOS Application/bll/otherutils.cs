@@ -9,7 +9,7 @@ using Telerik.Windows.Controls;
 
 namespace FreePOS.bll
 {
-    class otherutils
+    public static class otherutils
     {
         static RadDesktopAlertManager manager = new RadDesktopAlertManager();
         
@@ -229,6 +229,14 @@ namespace FreePOS.bll
             {
                 return "";
             }
+        }
+        public static string SafeToLower(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return string.Empty;
+            }
+            return value.ToLower();
         }
     }
 }

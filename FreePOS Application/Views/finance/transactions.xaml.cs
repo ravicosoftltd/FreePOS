@@ -28,9 +28,9 @@ namespace FreePOS.Views.finance
         public transactions()
         {
             InitializeComponent();
-            
-            
 
+
+            financeaccounts = financeaccountrepo.get();
             //var allaccount = db.financeaccount.ToList();
             fromaccount_combobox.ItemsSource = financeaccounts;
             fromaccount_combobox.DisplayMemberPath = "name";
@@ -75,11 +75,12 @@ namespace FreePOS.Views.finance
             var fromdate = FromDate.SelectedDate;
             var toDate = ToDate.SelectedDate;
             if (fromdate != null && toDate != null) {
+                toDate = TimeUtils.getEndDate(toDate);
                 dg.ItemsSource = null;
                 dg.Items.Clear();
                 dg.Items.Refresh();
                 var financetransactions = financetransactionrepo.getWithReferencedNames(fromdate, toDate);
-                financeaccounts = financeaccountrepo.get();
+                
                 //var db = new dbctx();
                 foreach (var item in financetransactions)
                 {
