@@ -42,11 +42,8 @@
         <CheckBox IsChecked="False" x:Name="ledger_checkbox" Content="Ledger" HorizontalAlignment="Left" Margin="323,476,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="paying_textbox" FontSize="30" HorizontalContentAlignment="Right" TabIndex="1" HorizontalAlignment="Left" Height="46" Margin="21,494,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="363"/>
 
-        <DataGrid Name="cart_dg" RowEditEnding="cart_dg_roweditending" CanUserAddRows="false" RowHeight="30" FontSize="12" AutoGenerateColumns="False" BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Right" Height="460" Margin="443,10,10,0" VerticalAlignment="Top" Width="580">
+        <DataGrid Name="cart_dg" GotFocus="cart_dg_GotFocus" RowEditEnding="cart_dg_roweditending" CanUserAddRows="false" RowHeight="30" FontSize="12" AutoGenerateColumns="False" BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Right" Height="460" Margin="443,10,10,0" VerticalAlignment="Top" Width="580">
             <DataGrid.Columns>
-
-                <!--<DataGridTextColumn  Header="Name"  Binding="{Binding name,UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>-->
-
                 <DataGridTemplateColumn  Header="Name">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

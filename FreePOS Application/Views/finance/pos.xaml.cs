@@ -1,24 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
-using System.Reflection;
-using System.Media;
 using FreePOS.data.viewmodel;
 using FreePOS.bll;
-using FreePOS.data;
 using FreePOS.data.dapper;
-using System.Threading;
 
 namespace FreePOS.Views.finance
 {
@@ -37,12 +26,9 @@ namespace FreePOS.Views.finance
             InitializeComponent();
             initFormOperations();
         }
-
         void initFormOperations()
         {
-            //var db = new dbctx();
             BarcodeMode_cb.IsChecked = AppSetting.BarcodeMode;
-
             if ((bool)BarcodeMode_cb.IsChecked)
             {
                 tb_Search.Text = "";
@@ -64,7 +50,6 @@ namespace FreePOS.Views.finance
             mappedproducts = productutils.mapproducttoproductsalemodel(products);
             cart_dg.ItemsSource = cart;
         }
-
         private void paying_textbox_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
@@ -77,7 +62,6 @@ namespace FreePOS.Views.finance
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void paying_textbox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -85,8 +69,7 @@ namespace FreePOS.Views.finance
                 doneSale();
             }
         }
-
-
+        #region cart operations
         void addItem_To_cart(productsaleorpurchaseviewmodel item)
         {
             lastInsertedProductInCart = item;
@@ -104,13 +87,13 @@ namespace FreePOS.Views.finance
             cart.Add(item);
             refreshCartAndTotal();
         }
-
         private void removeItemFromCart_btn_click(object sender, RoutedEventArgs e)
         {
             productsaleorpurchaseviewmodel obj = ((FrameworkElement)sender).DataContext as productsaleorpurchaseviewmodel;
             removeItemFromCart(obj);
         }
-        void removeItemFromCart(productsaleorpurchaseviewmodel item) {
+        void removeItemFromCart(productsaleorpurchaseviewmodel item)
+        {
             cart_dg.SelectedItem = null;
             lastInsertedProductInCart = null;
             foreach (productsaleorpurchaseviewmodel oldItem in cart)
@@ -118,10 +101,15 @@ namespace FreePOS.Views.finance
                 if (item.id == oldItem.id)
                 {
                     cart.Remove(item);
-                    refreshCartAndTotal();
                     break;
                 }
+                lastInsertedProductInCart = oldItem;
             }
+            if (lastInsertedProductInCart == null)
+            {
+                lastInsertedProductInCart = cart.LastOrDefault();
+            }
+            refreshCartAndTotal();
         }
         void minusQuantityOfItem_To_cart(productsaleorpurchaseviewmodel item)
         {
@@ -130,10 +118,14 @@ namespace FreePOS.Views.finance
             {
                 if (item.id == oldItem.id)
                 {
-                    oldItem.quantity -= 1;
-                    oldItem.total = oldItem.quantity * oldItem.price;
-                    refreshCartAndTotal();
+                    if (oldItem.quantity != 1) // if item qualtity in 1, we donot need to change quantity
+                    {
+                        oldItem.quantity -= 1;
+                        oldItem.total = oldItem.quantity * oldItem.price;
+                        refreshCartAndTotal();
+                    }
                     return;
+
                 }
             }
         }
@@ -147,12 +139,18 @@ namespace FreePOS.Views.finance
                     if (item.id == oldItem.id)
                     {
                         oldItem.total = oldItem.quantity * oldItem.price;
+                        lastInsertedProductInCart = oldItem;
                         break;
                     }
                 }
                 await Task.Delay(TimeSpan.FromMilliseconds(5));
                 refreshCartAndTotal();
             }
+        }
+        private void cart_dg_GotFocus(object sender, RoutedEventArgs e)
+        {
+            DataGrid dg = sender as DataGrid;
+            lastInsertedProductInCart = dg.CurrentItem as productsaleorpurchaseviewmodel;
         }
 
         private void refreshCartAndTotal()
@@ -174,7 +172,7 @@ namespace FreePOS.Views.finance
                 Console.WriteLine(ex);
             }
         }
-
+        #endregion
         private void tb_Search_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (tb_Search.Text != "")
@@ -192,59 +190,71 @@ namespace FreePOS.Views.finance
 
         private void tb_Search_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Down)
+            if (tb_Search.Text != null && tb_Search.Text != "")
             {
-                int index = lv_SearchFoodItem.SelectedIndex + 1;
-                if (index < lv_SearchFoodItem.Items.Count)
+                if (e.Key == Key.Down)
                 {
-                    lv_SearchFoodItem.SelectedIndex = index;
+                    int index = lv_SearchFoodItem.SelectedIndex + 1;
+                    if (index < lv_SearchFoodItem.Items.Count)
+                    {
+                        lv_SearchFoodItem.SelectedIndex = index;
+                    }
+                    return;
                 }
-                return;
-            }
-            else if (e.Key == Key.Up)
-            {
-                int index = lv_SearchFoodItem.SelectedIndex - 1;
-                if (index > -1)
+                else if (e.Key == Key.Up)
                 {
-                    lv_SearchFoodItem.SelectedIndex = index;
+                    int index = lv_SearchFoodItem.SelectedIndex - 1;
+                    if (index > -1)
+                    {
+                        lv_SearchFoodItem.SelectedIndex = index;
+                    }
+                    return;
                 }
-                return;
-            }
-            else if (e.Key == Key.Enter || e.Key == Key.OemPlus)
-            {
-                if (lv_SearchFoodItem.SelectedItem != null)
+                else if (e.Key == Key.Enter)
                 {
-                    productsaleorpurchaseviewmodel item = (productsaleorpurchaseviewmodel)lv_SearchFoodItem.SelectedItem;
-                    addItem_To_cart(item);
-                    tb_Search.Text = "";
-                    lv_SearchFoodItem.Visibility = Visibility.Hidden;
-                }
-            }
-            else if (e.Key == Key.OemMinus)
-            {
-                if (lv_SearchFoodItem.SelectedItem != null)
-                {
-                    productsaleorpurchaseviewmodel item = (productsaleorpurchaseviewmodel)lv_SearchFoodItem.SelectedItem;
-                    minusQuantityOfItem_To_cart(item);
-                    tb_Search.Text = "";
-                    lv_SearchFoodItem.Visibility = Visibility.Hidden;
+                    if (lv_SearchFoodItem.SelectedItem != null)
+                    {
+                        productsaleorpurchaseviewmodel item = (productsaleorpurchaseviewmodel)lv_SearchFoodItem.SelectedItem;
+                        addItem_To_cart(item);
+                        tb_Search.Text = "";
+                        lv_SearchFoodItem.Visibility = Visibility.Hidden;
+                    }
                 }
             }
-            else if (e.Key == Key.Delete)
+            else
             {
-                if (lv_SearchFoodItem.SelectedItem != null)
+                if (e.Key == Key.Up)
                 {
-                    productsaleorpurchaseviewmodel item = (productsaleorpurchaseviewmodel)lv_SearchFoodItem.SelectedItem;
-                    removeItemFromCart(item);
-                    tb_Search.Text = "";
-                    lv_SearchFoodItem.Visibility = Visibility.Hidden;
+                    if (lastInsertedProductInCart != null)
+                    {
+                        addItem_To_cart(lastInsertedProductInCart);
+                        tb_Search.Text = "";
+                        lv_SearchFoodItem.Visibility = Visibility.Hidden;
+                    }
+                }
+                else if (e.Key == Key.Down)
+                {
+                    if (lastInsertedProductInCart != null)
+                    {
+                        minusQuantityOfItem_To_cart(lastInsertedProductInCart);
+                        tb_Search.Text = "";
+                        lv_SearchFoodItem.Visibility = Visibility.Hidden;
+                    }
+                }
+                else if (e.Key == Key.Delete)
+                {
+                    if (lv_SearchFoodItem.SelectedItem != null)
+                    {
+                        removeItemFromCart(lastInsertedProductInCart);
+                        tb_Search.Text = "";
+                        lv_SearchFoodItem.Visibility = Visibility.Hidden;
+                    }
+                }
+                else if (e.Key == Key.End)
+                {
+                    doneSale();
                 }
             }
-            else if (e.Key == Key.End)
-            {
-                doneSale();
-            }
-
         }
         private void tb_Search_Barcode_PreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -345,6 +355,7 @@ namespace FreePOS.Views.finance
             }
 
         }
+
     }
 
 }

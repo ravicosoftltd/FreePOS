@@ -43,11 +43,8 @@
         <Label Content="Change" HorizontalAlignment="Left" Margin="21,473,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.023,2.917"/>
         <Label x:Name="change_label" FontSize="40" Content="0" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="21,500,0,-11" VerticalAlignment="Top" Width="363" Background="#FF485385" Height="52" Foreground="#DDFFFFFF"/>
 
-        <DataGrid Name="cart_dg" RowEditEnding="cart_dg_roweditending" CanUserAddRows="false" RowHeight="30" FontSize="12" AutoGenerateColumns="False" BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Right" Height="460" Margin="443,10,10,0" VerticalAlignment="Top" Width="580">
+        <DataGrid Name="cart_dg" GotFocus="cart_dg_GotFocus" RowEditEnding="cart_dg_roweditending" CanUserAddRows="false" RowHeight="30" FontSize="12" AutoGenerateColumns="False" BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Right" Height="460" Margin="443,10,10,0" VerticalAlignment="Top" Width="580">
             <DataGrid.Columns>
-
-                <!--<DataGridTextColumn  Header="Name"  Binding="{Binding name,UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>-->
-
                 <DataGridTemplateColumn  Header="Name">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
