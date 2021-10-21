@@ -14537,7 +14537,7 @@
             "SourcePath" = "8:..\\FreePOS Application\\data\\freepos.sql"
             "TargetName" = "8:freepos.sql"
             "Tag" = "8:"
-            "Folder" = "8:_11B5653D97704310AEB75C0E2869FE63"
+            "Folder" = "8:_9B401FC7FD8646BAB2A24BC5930522F5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -16431,7 +16431,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_3597E2259F174336B9DFD24EC0538251"
             {
-            "SourcePath" = "8:"
+            "SourcePath" = "8:..\\FreePOS Application\\obj\\Release\\FreePOS.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_11B5653D97704310AEB75C0E2869FE63"
