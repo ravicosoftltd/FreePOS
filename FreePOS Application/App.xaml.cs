@@ -12,12 +12,13 @@ namespace FreePOS
     {
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
-            String innerMessage = "Error: \r\n";
-            innerMessage += e.Exception.StackTrace.Substring(0,600);
+            String innerMessage = "Error";
             innerMessage += "\r\n";
+            innerMessage += "Message :"+ e.Exception.Message;
             innerMessage += "\r\n";
-            innerMessage += e.Exception.InnerException.InnerException;
-
+            innerMessage += "StackTrace "+ e.Exception.StackTrace;
+            innerMessage += "\r\n";
+            innerMessage += "InnerException " + e.Exception.InnerException.InnerException;
             MessageBox.Show(innerMessage, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
             e.Handled = true;
         }

@@ -31,6 +31,7 @@ namespace FreePOS.Views.others
             tb_Footer.Text = AppSetting.Footer;
             tb_Reciptlineheight.Text = Convert.ToString(AppSetting.ReciptlineHeight);
             BarcodeMode_cb.IsChecked = AppSetting.BarcodeMode;
+            NumberOfReceiptsToPrint_tb.Text = AppSetting.NumberOfReceiptToPrint.ToString();
         }
 
         private void btn_Save(object sender, RoutedEventArgs e)
@@ -44,13 +45,17 @@ namespace FreePOS.Views.others
                 string footer = tb_Footer.Text;
                 int Reciptlineheight = Convert.ToInt32(tb_Reciptlineheight.Text);
                 bool barcodeModel = (bool)BarcodeMode_cb.IsChecked;
-                AppSetting.saveSettings(pageWidth, marginLeft, title, subTitle, footer, Reciptlineheight, barcodeModel);
+                int numberOfReceiptsToPrint = 1;
+                try {
+                    numberOfReceiptsToPrint = Convert.ToInt32(NumberOfReceiptsToPrint_tb.Text);
+                } catch { }
+                AppSetting.saveSettings(pageWidth, marginLeft, title, subTitle, footer, Reciptlineheight, barcodeModel, numberOfReceiptsToPrint);
                 MessageBox.Show("Saved, Restart application to apply setting","Success");
                 
             }
             catch
             {
-
+                MessageBox.Show("Setting not saved please type all values", "Error");
             }
         }
 

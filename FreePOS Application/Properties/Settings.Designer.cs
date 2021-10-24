@@ -85,7 +85,7 @@ namespace FreePOS.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2020-09-03")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2021-10-24")]
         public global::System.DateTime lastsavedate {
             get {
                 return ((global::System.DateTime)(this["lastsavedate"]));
@@ -164,6 +164,18 @@ namespace FreePOS.Properties {
             }
             set {
                 this["DatabasePassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int NumberOfReceiptToPrint {
+            get {
+                return ((int)(this["NumberOfReceiptToPrint"]));
+            }
+            set {
+                this["NumberOfReceiptToPrint"] = value;
             }
         }
     }

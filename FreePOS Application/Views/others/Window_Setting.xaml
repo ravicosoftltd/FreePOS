@@ -9,12 +9,12 @@
     <Grid Margin="0,0,0,0">
         <Grid Background="#FFF9F9F9" Margin="10,10,288,103">
             <Label Content="Printer" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-            
+
             <Label Content="Page Width" HorizontalAlignment="Left" Margin="22,67,0,0" VerticalAlignment="Top" Height="38"/>
             <TextBox  Name="tb_PageWidth" HorizontalAlignment="Left" Height="32" Margin="101,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="103"/>
             <Label Content="Margin Left" HorizontalAlignment="Left" Margin="231,69,0,0" VerticalAlignment="Top" Height="37"/>
             <TextBox Name="tb_MarginLeft" HorizontalAlignment="Left" Height="32" Margin="317,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="103"/>
-            
+
             <Label Content="Title" HorizontalAlignment="Left" Margin="22,131,0,0" VerticalAlignment="Top" Height="37"/>
             <TextBox Name="tb_Title" HorizontalAlignment="Left" Height="32" Margin="101,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="333"/>
             <Label Content="Sub Title" HorizontalAlignment="Left" Margin="22,192,0,0" VerticalAlignment="Top" Height="37"/>
@@ -27,7 +27,9 @@
         <Grid Background="#FFF0F0F0" Margin="500,10,10,103">
             <Label Content="Other" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
             <Label Content="Barcode Mode" HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top" Height="38"/>
-            <CheckBox  Name="BarcodeMode_cb" HorizontalAlignment="Left" Height="34" Margin="115,62,0,0" VerticalAlignment="Top" />
+            <CheckBox  Name="BarcodeMode_cb" HorizontalAlignment="Left" Height="34" Margin="196,62,0,0" VerticalAlignment="Top" />
+            <Label Content="Number Of Receipts To Print" HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top" Height="38"/>
+            <TextBox  x:Name="NumberOfReceiptsToPrint_tb" Text="1" HorizontalAlignment="Left" Height="34" Margin="196,104,0,0" VerticalAlignment="Top" Width="39" />
         </Grid>
         <Button Content="Save" Click="btn_Save" Background="Green" BorderBrush="DarkGreen" HorizontalAlignment="Left" Margin="280,493,0,0" VerticalAlignment="Top" Width="203" Height="39"/>
     </Grid>

@@ -28,6 +28,7 @@ namespace FreePOS.Views.finance
         }
         void initFormOperations()
         {
+            numberOfReceiptsToPrint_tb.Text = AppSetting.NumberOfReceiptToPrint.ToString();
             BarcodeMode_cb.IsChecked = AppSetting.BarcodeMode;
             if ((bool)BarcodeMode_cb.IsChecked)
             {
@@ -187,7 +188,6 @@ namespace FreePOS.Views.finance
             }
             else { lv_SearchFoodItem.Visibility = Visibility.Hidden; }
         }
-
         private void tb_Search_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (tb_Search.Text != null && tb_Search.Text != "")
@@ -258,9 +258,9 @@ namespace FreePOS.Views.finance
         }
         private void tb_Search_Barcode_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter)
+            if (tb_Search_Barcode.Text != null && tb_Search_Barcode.Text != "")
             {
-                if (tb_Search_Barcode.Text != "")
+                if (e.Key == Key.Enter)
                 {
                     productsaleorpurchaseviewmodel product = mappedproducts.Where(a => a.barcode == tb_Search_Barcode.Text).FirstOrDefault();
                     if (product != null)
@@ -268,18 +268,44 @@ namespace FreePOS.Views.finance
                         addItem_To_cart(product);
                     }
                     tb_Search_Barcode.Text = "";
+
                 }
-                else
+            }
+            else
+            {
+                if (e.Key == Key.Up)
                 {
                     if (lastInsertedProductInCart != null)
                     {
                         addItem_To_cart(lastInsertedProductInCart);
+                        tb_Search.Text = "";
+                        lv_SearchFoodItem.Visibility = Visibility.Hidden;
                     }
                 }
+                else if (e.Key == Key.Down)
+                {
+                    if (lastInsertedProductInCart != null)
+                    {
+                        minusQuantityOfItem_To_cart(lastInsertedProductInCart);
+                        tb_Search.Text = "";
+                        lv_SearchFoodItem.Visibility = Visibility.Hidden;
+                    }
+                }
+                else if (e.Key == Key.Delete)
+                {
+                    if (lv_SearchFoodItem.SelectedItem != null)
+                    {
+                        removeItemFromCart(lastInsertedProductInCart);
+                        tb_Search.Text = "";
+                        lv_SearchFoodItem.Visibility = Visibility.Hidden;
+                    }
+                }
+                else if (e.Key == Key.End)
+                {
+                    doneSale();
+                }
             }
-
         }
-
         private void BarcodeMode_cb_Checked(object sender, RoutedEventArgs e)
         {
             tb_Search.Text = "";
@@ -290,7 +316,6 @@ namespace FreePOS.Views.finance
             tb_Search_Barcode.Focus();
 
         }
-
         private void BarcodeMode_cb_UnChecked(object sender, RoutedEventArgs e)
         {
             tb_Search.Text = "";
@@ -299,7 +324,6 @@ namespace FreePOS.Views.finance
             tb_Search_Barcode.Text = "";
             tb_Search_Barcode.Visibility = Visibility.Hidden;
         }
-
         private void customer_button_click(object sender, RoutedEventArgs e)
         {
             var dialog = new DialogSelectUser("customer");
@@ -313,7 +337,6 @@ namespace FreePOS.Views.finance
         {
             doneSale();
         }
-
         void doneSale()
         {
             try
@@ -330,19 +353,10 @@ namespace FreePOS.Views.finance
                     totalpayment = Convert.ToDouble(paying_textbox.Text);
                 }
                 var printCustomerInfoOnReceipt = true;
-                var totalnumberofReceipts = 0;
-                if ((bool)cbx_Receipt1.IsChecked)
-                {
-                    totalnumberofReceipts++;
-                }
-                if ((bool)cbx_Receipt2.IsChecked)
-                {
-                    totalnumberofReceipts++;
-                }
-                if ((bool)cbx_Receipt3.IsChecked)
-                {
-                    totalnumberofReceipts++;
-                }
+                var totalnumberofReceipts = 1;
+                try {
+                    totalnumberofReceipts = Convert.ToInt32(numberOfReceiptsToPrint_tb.Text);
+                } catch { }
                 saleutils.possale(cart, totalpayment - totalbill, customer, totalnumberofReceipts, printCustomerInfoOnReceipt);
 
                 MessageBox.Show("Sale done Ammount :: " + totalbill, "Success");

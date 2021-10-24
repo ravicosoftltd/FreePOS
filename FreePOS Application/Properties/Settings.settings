@@ -18,7 +18,7 @@
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="lastsavedate" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)">2020-09-03</Value>
+      <Value Profile="(Default)">2021-10-24</Value>
     </Setting>
     <Setting Name="Footer" Type="System.String" Scope="User">
       <Value Profile="(Default)">Call at  (+92 302 4759550)</Value>
@@ -37,6 +37,9 @@
     </Setting>
     <Setting Name="DatabasePassword" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="NumberOfReceiptToPrint" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
     </Setting>
   </Settings>
 </SettingsFile>

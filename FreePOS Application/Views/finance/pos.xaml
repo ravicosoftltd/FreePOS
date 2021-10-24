@@ -102,9 +102,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <CheckBox Name="cbx_Receipt1" IsChecked="True" Content="R" HorizontalAlignment="Left" Margin="421,497,0,0" VerticalAlignment="Top"/>
-        <CheckBox Name="cbx_Receipt2" Content="R" HorizontalAlignment="Left" Margin="421,515,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cbx_Receipt3" Content="R" HorizontalAlignment="Left" Margin="421,533,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="numberOfReceiptsToPrint_tb" Text="1" HorizontalAlignment="Left" Margin="418,515,0,0" VerticalAlignment="Top" Width="27"/>
         <Button Content="Sale" Click="btn_doSale" HorizontalAlignment="Left" Margin="459,499,0,0" VerticalAlignment="Top" Width="565" Height="51"/>
     </Grid>
 </Window>

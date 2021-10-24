@@ -15,7 +15,7 @@
         <Button Click="btn_CloseApplication" Content="Close Application" HorizontalAlignment="Left" Margin="194,253,0,0" VerticalAlignment="Top" Width="143" Height="36" FontSize="10" Background="#FF575555">
         </Button>
         <Label Content="FreePOS" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top"  FontFamily="DokChampa" FontSize="24" Foreground="#FFDEDEDE"/>
-        <Label Content="www.freepos.pk +92 302 4759550  (Release 2.0 19/10/2021)"  VerticalAlignment="Bottom" HorizontalContentAlignment="Center" Margin="0,0,0,0" FontSize="12" Background="#FF363636" Height="25" Foreground="#DDC7C7C7"/>
+        <Label Content="www.freepos.pk +92 302 4759550  (Release 3.0 24/10/2021)"  VerticalAlignment="Bottom" HorizontalContentAlignment="Center" Margin="0,0,0,0" FontSize="12" Background="#FF363636" Height="25" Foreground="#DDC7C7C7"/>
         
     </Grid>
 

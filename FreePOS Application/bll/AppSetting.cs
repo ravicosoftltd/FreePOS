@@ -16,6 +16,7 @@ namespace FreePOS.bll
         public static String Footer = Settings.Default.Footer;
         public static int ReciptlineHeight = Settings.Default.ReciptlineHeight;
         public static bool BarcodeMode = Settings.Default.BarcodeMode;
+        public static int NumberOfReceiptToPrint = Settings.Default.NumberOfReceiptToPrint;
         //database setting
         public static string DatabaseServer = Settings.Default.DatabaseServer;
         public static string DatabaseName = Settings.Default.DatabaseName;
@@ -29,7 +30,8 @@ namespace FreePOS.bll
             String subTitle, 
             String footer, 
             int reciptlineheight,
-            bool barcodeMode
+            bool barcodeMode,
+            int numberOfReceiptToPrint
             )
         {
             Settings.Default.PrinterPageWidth = pageWidth;
@@ -45,6 +47,9 @@ namespace FreePOS.bll
             Settings.Default.ReciptlineHeight = reciptlineheight;
             ReciptlineHeight = reciptlineheight;
             Settings.Default.BarcodeMode = barcodeMode;
+            BarcodeMode = barcodeMode;
+            Settings.Default.NumberOfReceiptToPrint = numberOfReceiptToPrint;
+            NumberOfReceiptToPrint = numberOfReceiptToPrint;
             BarcodeMode = barcodeMode;
             Settings.Default.Save();
         }
