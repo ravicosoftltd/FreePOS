@@ -154,7 +154,6 @@
     <Compile Include="data\viewmodel\apiresponseuserclass.cs" />
     <Compile Include="data\viewmodel\commonsettingfields.cs" />
     <Compile Include="data\viewmodel\productsaleorpurchaseviewmodel.cs" />
-    <Compile Include="other\Class1.cs" />
     <Compile Include="Views\finance\accountsbalance.xaml.cs">
       <DependentUpon>accountsbalance.xaml</DependentUpon>
     </Compile>
@@ -382,7 +381,6 @@
     <None Include="data\reporttemplates\invoice.rdl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="other\old software\Release.zip" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -401,10 +399,6 @@
     <Resource Include="assets\pattern1.png" />
     <Resource Include="assets\pattern2.png" />
     <Content Include="data\freepos-sqlserver.sql" />
-    <Content Include="other\backups\bbdb_usman_pos_products-10-7-2021.sql" />
-    <Content Include="other\backups\quickpos_usman_pos_backup-10-07-2021.sql" />
-    <Content Include="other\old software\Old Demo Data.sql" />
-    <Content Include="other\old software\Old.sql" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
