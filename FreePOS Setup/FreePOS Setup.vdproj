@@ -15813,15 +15813,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:FreePOS"
-        "ProductCode" = "8:{DA24ED40-016D-437B-967B-F333BA01E835}"
-        "PackageCode" = "8:{E360153E-05C0-422A-BB88-C189DBA377A3}"
+        "ProductCode" = "8:{1B01D9CF-75E5-47AC-8882-300383E552DD}"
+        "PackageCode" = "8:{22FC594C-77BD-4B1B-BD5A-44DE95F53371}"
         "UpgradeCode" = "8:{82A05332-E13B-45D1-8CC4-B3BD04480B4B}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:03.00.00"
+        "ProductVersion" = "8:04.00.00"
         "Manufacturer" = "8:Ravicosoft"
         "ARPHELPTELEPHONE" = "8:+92-302-4759550"
         "ARPHELPLINK" = "8:https://freepos.pk"
@@ -16363,7 +16363,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_3597E2259F174336B9DFD24EC0538251"
             {
-            "SourcePath" = "8:..\\FreePOS Application\\obj\\Release\\FreePOS.exe"
+            "SourcePath" = "8:"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_11B5653D97704310AEB75C0E2869FE63"
